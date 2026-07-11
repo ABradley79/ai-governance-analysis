@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Does the framework hold when a real decision has to be made fast, under pressure?">
+<title>Delay, Halt, Nothing: The Frontier-Lab Safety Frameworks Under Pressure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1d21; --muted:#63686e; --faint:#9aa0a6;
+  --paper:#fdfdfc; --card:#ffffff; --line:#e6e6e2; --line-strong:#d2d2cc;
+  --signal:#c03b22; --signal-soft:#fbeeea;
+  --serif:"IBM Plex Serif",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:56px 24px 80px}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:2px}
+
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font:600 clamp(30px,5.4vw,46px)/1.12 var(--serif);letter-spacing:-.01em;margin:14px 0 12px;max-width:20ch}
+.question{font:400 clamp(17px,2.4vw,20px)/1.5 var(--serif);color:var(--muted);max-width:52ch;font-style:italic}
+.fw-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin:34px 0 0}
+.fw{background:var(--card);padding:14px 16px}
+.fw .lab{font:600 13px/1.3 var(--sans)}
+.fw .doc{font:400 13px/1.45 var(--sans);color:var(--muted)}
+.fw .vv{font:400 11px/1.6 var(--mono);color:var(--faint);margin-top:6px}
+.fw a{font-size:12px}
+
+section{margin-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-strong);padding-bottom:10px;margin-bottom:6px}
+.sec-head h2{font:600 20px/1.3 var(--serif)}
+.sec-head .tag{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.caption{font:400 13.5px/1.6 var(--sans);color:var(--muted);max-width:70ch;margin:12px 0 24px}
+.headline{font:400 15.5px/1.65 var(--serif);max-width:66ch;margin:14px 0 24px}
+
+/* Verb strip, the signature */
+.verbs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.verb{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 20px 18px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s}
+.verb:hover{border-color:var(--line-strong)}
+.verb[aria-expanded="true"]{border-color:var(--ink)}
+.verb .v-lab{font:500 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.verb .v-word{display:block;font:600 clamp(26px,4.6vw,38px)/1.05 var(--serif);margin:12px 0 4px}
+.verb.none .v-word{color:var(--signal);font-style:italic}
+.verb.none .v-void{display:inline-block;width:2.2em;border-bottom:2px dashed var(--signal);vertical-align:baseline;transform:translateY(-.18em)}
+.verb .v-line{font:400 12.5px/1.55 var(--mono);color:var(--muted);margin-top:8px}
+.v-detail{grid-column:1/-1;background:var(--card);border:1px solid var(--ink);border-radius:6px;padding:20px 22px;display:none}
+.v-detail.open{display:block}
+
+/* Matrix */
+.matrix{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--line)}
+.m-grid{display:grid;grid-template-columns:110px repeat(3,1fr);gap:1px;min-width:640px}
+.m-corner,.m-lab,.m-stage,.m-cell{background:var(--card);padding:13px 14px}
+.m-lab{font:600 13px/1.3 var(--sans)}
+.m-lab span{display:block;font:400 11px/1.5 var(--sans);color:var(--muted)}
+.m-stage{font:600 13px/1.3 var(--sans)}
+.m-stage span{display:block;font:400 11px/1.5 var(--sans);color:var(--muted);font-style:italic}
+.m-cell{cursor:pointer;font:inherit;text-align:left;color:inherit;border:0;position:relative;transition:background .15s}
+.m-cell:hover{background:#f6f6f3}
+.m-cell .verdict{font:400 12.5px/1.5 var(--sans);color:var(--ink)}
+.m-cell.hollow{background:var(--signal-soft)}
+.m-cell.hollow:hover{background:#f7e4de}
+.m-cell.hollow .h-tag{font:600 9.5px/1 var(--mono);letter-spacing:.13em;color:var(--signal);text-transform:uppercase;display:block;margin-bottom:6px}
+.m-cell.selected{box-shadow:inset 0 0 0 2px var(--ink)}
+.m-cell.hollow.selected{box-shadow:inset 0 0 0 2px var(--signal)}
+.m-scroll{overflow-x:auto}
+.panel{border:1px solid var(--ink);border-radius:6px;background:var(--card);padding:22px 24px;margin-top:16px;display:none}
+.panel.open{display:block}
+.panel.hollow-p{border-color:var(--signal)}
+.p-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin-bottom:10px}
+.p-where{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.p-hollow{font:600 10px/1 var(--mono);letter-spacing:.13em;color:var(--signal);text-transform:uppercase}
+.p-verdict{font:600 17px/1.4 var(--serif);margin-bottom:8px}
+.p-detail{font:400 14.5px/1.7 var(--sans);max-width:72ch}
+.cite{font:400 11.5px/1.7 var(--mono);color:var(--muted);margin-top:14px;padding-top:10px;border-top:1px solid var(--line)}
+.cite b{font-weight:500;color:var(--faint)}
+
+/* Ranking */
+.rank{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.r-item{display:grid;grid-template-columns:56px 1fr;gap:0;border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden}
+.r-num{display:flex;align-items:center;justify-content:center;font:600 22px/1 var(--serif);border-right:1px solid var(--line);color:var(--muted)}
+.r-body{padding:16px 18px}
+.r-top{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.r-mech{font:600 14px/1.4 var(--sans)}
+.r-type{font:500 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--paper);background:var(--muted);border-radius:3px;padding:4px 7px}
+.r-type.valve{background:var(--signal)}
+.r-line{font:400 13.5px/1.6 var(--sans);color:var(--muted);margin-top:6px;max-width:66ch}
+.r-note{font:400 13.5px/1.6 var(--serif);font-style:italic;color:var(--signal);max-width:66ch;margin-top:8px}
+
+/* Bins */
+.bins{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--line)}
+.b-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:1px;min-width:600px}
+.b-h,.b-c{background:var(--card);padding:12px 14px;font:400 13px/1.5 var(--sans)}
+.b-h{font-weight:600}
+.b-c.fsf-col{background:var(--signal-soft)}
+.b-scroll{overflow-x:auto}
+.finding{font:400 15px/1.65 var(--serif);max-width:66ch;margin:18px 0 8px}
+.roads{font:400 13px/1.7 var(--sans);color:var(--muted);max-width:72ch;margin-top:10px}
+.roads b{font-weight:600;color:var(--ink)}
+
+/* Footer */
+.verbatim{font:400 12px/1.7 var(--mono);color:var(--faint);max-width:76ch;margin:-14px 0 24px;padding-left:12px;border-left:2px solid var(--line)}
+.verbatim b{font-weight:500;color:var(--muted)}
+footer{margin-top:88px;border-top:1px solid var(--line-strong);padding-top:22px}
+details{margin-bottom:14px}
+summary{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;padding:6px 0}
+summary:hover{color:var(--ink)}
+.caveat{font:400 13px/1.7 var(--sans);color:var(--muted);max-width:76ch;margin:10px 0 10px 18px}
+.prov{font:400 11.5px/1.8 var(--mono);color:var(--faint)}
+.foot-links{font:400 11.5px/1.8 var(--mono);color:var(--faint);margin-bottom:10px}
+.foot-links a{color:var(--muted)}
+@media(max-width:680px){
+  .verbs{grid-template-columns:1fr}
+  .fw-row{grid-template-columns:1fr}
+  .wrap{padding:40px 18px 64px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1 id="title"></h1>
+  <p class="question" id="question"></p>
+  <div class="fw-row" id="fwrow"></div>
+</header>
+
+<section id="s-verbs">
+  <div class="sec-head"><h2>The operative verbs</h2><span class="tag">headline: <span id="verb-headline"></span></span></div>
+  <p class="caption">One verb per framework, at the moment the framework must act. Select a verb for its detail and citation.</p>
+  <div class="verbs" id="verbs"></div>
+</section>
+
+<section id="s-matrix">
+  <div class="sec-head"><h2>The four-stage pipeline</h2><span class="tag">instrument I1</span></div>
+  <p class="headline" id="m-headline"></p>
+  <p class="verbatim" id="m-headline-src"></p>
+  <p class="caption" id="m-caption"></p>
+  <div class="m-scroll"><div class="matrix"><div class="m-grid" id="mgrid"></div></div></div>
+  <div class="panel" id="mpanel" aria-live="polite"></div>
+</section>
+
+<section id="s-rank">
+  <div class="sec-head"><h2>Reversibility of the escape routes</h2><span class="tag">instrument I2</span></div>
+  <p class="headline" id="r-headline"></p>
+  <p class="caption" id="r-key"></p>
+  <p class="verbatim" id="r-key-src"></p>
+  <div class="rank" id="rank"></div>
+</section>
+
+<section id="s-bins">
+  <div class="sec-head"><h2>The obligations ledger</h2><span class="tag">three bins</span></div>
+  <p class="caption" id="b-caption"></p>
+  <p class="verbatim" id="b-caption-src"></p>
+  <div class="b-scroll"><div class="bins"><div class="b-grid" id="bgrid"></div></div></div>
+  <p class="finding" id="b-finding"></p>
+  <p class="roads" id="b-roads"></p>
+</section>
+
+<footer>
+  <details><summary>Method note: four caveats</summary><div id="caveats"></div></details>
+  <p class="foot-links"><a href="https://github.com/ABradley79/ai-governance-analysis">Repository</a> &middot; <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/METHOD.md">METHOD.md</a> &middot; <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/comparative-artefacts/Comparative_Frontier_Labs_10July2026.md">Frozen artefact: Comparative_Frontier_Labs_10July2026.md</a></p>
+  <p class="prov" id="prov"></p>
+</footer>
+
+</div>
+<script>
+fetch("./comparative_data.json")
+  .then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(render)
+  .catch(err => { document.getElementById("eyebrow").textContent = "comparative_data.json failed to load"; console.error(err); });
+
+function render(DATA) {
+
+const FW = Object.fromEntries(DATA.meta.frameworks.map(f=>[f.id,f]));
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const cite = c => `<div class="cite">${c.artefact?`<b>artefact</b> ${esc(c.artefact)}`:""}${c.primary?` &nbsp;&middot;&nbsp; <b>primary</b> ${esc(c.primary)}`:""}</div>`;
+
+/* Header */
+document.getElementById("eyebrow").textContent = DATA.meta.source_artefact_class + " · " + DATA.meta.artefact_close_date;
+document.getElementById("title").textContent = DATA.meta.title;
+document.getElementById("question").textContent = DATA.meta.question;
+document.getElementById("fwrow").innerHTML = DATA.meta.frameworks.map(f=>
+  `<div class="fw"><div class="lab">${esc(f.lab)}</div><div class="doc">${esc(f.name)} ${esc(f.version)}</div>
+   <div class="vv">${esc(f.version_date)} · verified ${esc(f.verified_current)} · <a href="${f.official_link}" target="_blank" rel="noopener">official source</a></div></div>`).join("");
+
+/* Verbs */
+document.getElementById("verb-headline").textContent = DATA.verbs.headline;
+const verbsEl = document.getElementById("verbs");
+verbsEl.innerHTML = DATA.verbs.items.map((v,i)=>{
+  const word = v.verb==="none" ? `<span class="v-void" aria-hidden="true"></span> <span style="font-size:.55em">none</span>` : esc(v.verb);
+  return `<button class="verb ${v.verb==="none"?"none":""}" data-i="${i}" aria-expanded="false">
+    <span class="v-lab">${esc(FW[v.framework].lab)}</span>
+    <span class="v-word">${word}</span>
+    <span class="v-line">${esc(v.line)}</span></button>`;
+}).join("") + `<div class="v-detail" id="vdetail" aria-live="polite"></div>`;
+const vdetail = document.getElementById("vdetail");
+verbsEl.querySelectorAll(".verb").forEach(btn=>btn.addEventListener("click",()=>{
+  const open = btn.getAttribute("aria-expanded")==="true";
+  verbsEl.querySelectorAll(".verb").forEach(b=>b.setAttribute("aria-expanded","false"));
+  if(open){vdetail.classList.remove("open");return}
+  btn.setAttribute("aria-expanded","true");
+  const v = DATA.verbs.items[btn.dataset.i];
+  vdetail.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[v.framework].lab)} · operative verb</span></div>
+    <div class="p-detail">${esc(v.detail)}</div>${cite(v.citation)}`;
+  vdetail.classList.add("open");
+}));
+
+/* Matrix */
+const pm = DATA.pipeline_matrix;
+document.getElementById("m-headline").textContent = pm.headline_plain;
+document.getElementById("m-headline-src").innerHTML = `<b>Artefact, verbatim:</b> "${esc(pm.headline)}"`;
+document.getElementById("m-caption").textContent = pm.caption;
+const order = ["rsp","openai","fsf"];
+let mg = `<div class="m-corner"></div>` + order.map(id=>`<div class="m-lab">${esc(FW[id].lab)}<span>${esc(FW[id].name)} ${esc(FW[id].version)}</span></div>`).join("");
+pm.stages.forEach(st=>{
+  mg += `<div class="m-stage">${esc(st.label)}<span>${esc(st.gloss)}</span></div>`;
+  order.forEach(id=>{
+    const c = pm.cells.find(x=>x.stage===st.id&&x.framework===id);
+    mg += `<button class="m-cell ${c.hollow?"hollow":""}" data-stage="${st.id}" data-fw="${id}" aria-expanded="false">
+      ${c.hollow?`<span class="h-tag">hollow</span>`:""}<span class="verdict">${esc(c.verdict)}</span></button>`;
+  });
+});
+document.getElementById("mgrid").innerHTML = mg;
+const mpanel = document.getElementById("mpanel");
+document.querySelectorAll(".m-cell").forEach(cell=>cell.addEventListener("click",()=>{
+  const was = cell.classList.contains("selected");
+  document.querySelectorAll(".m-cell").forEach(x=>{x.classList.remove("selected");x.setAttribute("aria-expanded","false")});
+  if(was){mpanel.classList.remove("open");return}
+  cell.classList.add("selected"); cell.setAttribute("aria-expanded","true");
+  const c = pm.cells.find(x=>x.stage===cell.dataset.stage&&x.framework===cell.dataset.fw);
+  const st = pm.stages.find(s=>s.id===c.stage);
+  mpanel.className = "panel open" + (c.hollow?" hollow-p":"");
+  mpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[c.framework].lab)} · ${esc(st.label)}: ${esc(st.gloss)}</span>${c.hollow?`<span class="p-hollow">hollow stage</span>`:""}</div>
+    <div class="p-verdict">${esc(c.verdict)}</div><div class="p-detail">${esc(c.detail)}</div>${cite(c.citation)}`;
+  mpanel.scrollIntoView({block:"nearest",behavior:"smooth"});
+}));
+
+/* Ranking */
+const rr = DATA.reversibility_ranking;
+document.getElementById("r-headline").textContent = rr.headline;
+document.getElementById("r-key").textContent = rr.key_plain;
+document.getElementById("r-key-src").innerHTML = `<b>Artefact, verbatim (Section 4):</b> "${esc(rr.key)}"`;
+document.getElementById("rank").innerHTML = rr.items.map(r=>
+  `<div class="r-item">
+    <div class="r-num" aria-label="rank ${r.rank}">${r.rank}</div>
+    <div class="r-body"><div class="r-top"><span class="r-mech">${esc(FW[r.framework].lab)}: ${esc(r.mechanism)}</span><span class="r-type ${r.type==="valve"?"valve":""}">${esc(r.type)}</span></div>
+    <div class="r-line">${esc(r.line)}</div>${r.note?`<div class="r-note">${esc(r.note)}</div>`:""}${cite(r.citation)}</div>
+  </div>`).join("");
+
+/* Bins */
+const ob = DATA.obligation_bins;
+document.getElementById("b-caption").textContent = ob.caption_plain;
+document.getElementById("b-caption-src").innerHTML = `<b>Artefact, verbatim (Section 3):</b> "${esc(ob.caption)}"`;
+let bg = `<div class="b-h"></div><div class="b-h">Anthropic RSP</div><div class="b-h">OpenAI Preparedness</div><div class="b-h fsf-col">DeepMind FSF</div>`;
+ob.bins.forEach(r=>{ bg += `<div class="b-h">${esc(r.bin)}</div><div class="b-c">${esc(r.rsp)}</div><div class="b-c">${esc(r.openai)}</div><div class="b-c fsf-col">${esc(r.fsf)}</div>`; });
+document.getElementById("bgrid").innerHTML = bg;
+document.getElementById("b-finding").textContent = ob.finding;
+document.getElementById("b-roads").innerHTML = `Two roads to the same softness. <b>OpenAI:</b> ${esc(ob.roads.openai)} · <b>DeepMind:</b> ${esc(ob.roads.fsf)} <span class="cite" style="border:0;padding:0;display:inline"> · artefact ${esc(ob.citation.artefact)}</span>`;
+
+/* Footer */
+document.getElementById("caveats").innerHTML = DATA.meta.method_caveats.map(c=>`<p class="caveat">${esc(c)}</p>`).join("");
+document.getElementById("prov").innerHTML = `Rendered verbatim from <b>comparative_data.json</b>, the content contract of ${esc(DATA.meta.source_artefact)} (frozen ${esc(DATA.meta.artefact_close_date)}). The page composes no analytical text of its own.`;
+}
+</script>
+</body>
+</html>

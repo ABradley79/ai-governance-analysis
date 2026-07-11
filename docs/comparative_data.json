@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "title": "Delay, Halt, Nothing: The Frontier-Lab Safety Frameworks Under Pressure",
+    "question": "Does the framework hold when a real decision has to be made fast, under pressure?",
+    "source_artefact": "Comparative_Frontier_Labs_10July2026.md",
+    "source_artefact_class": "Comparative artefact, first of its class. Frozen at close, dated.",
+    "artefact_close_date": "2026-07-10",
+    "render_rule": "Verdict, detail and citation strings are lifted verbatim from the frozen artefact and render unchanged. Fields suffixed _plain are reader-facing glosses authored and ruled by Andrew Bradley (11 July 2026); each renders above its verbatim source line, never in place of it.",
+    "frameworks": [
+      {
+        "id": "rsp",
+        "lab": "Anthropic",
+        "name": "Responsible Scaling Policy",
+        "version": "v3.3",
+        "version_date": "2026-05-26",
+        "verified_current": "2026-07-05",
+        "official_link": "https://www.anthropic.com/responsible-scaling-policy"
+      },
+      {
+        "id": "openai",
+        "lab": "OpenAI",
+        "name": "Preparedness Framework",
+        "version": "v2",
+        "version_date": "2025-04-15",
+        "verified_current": "2026-07-07",
+        "official_link": "https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf"
+      },
+      {
+        "id": "fsf",
+        "lab": "Google DeepMind",
+        "name": "Frontier Safety Framework",
+        "version": "v3.1",
+        "version_date": "2026-04-17",
+        "verified_current": "2026-07-08",
+        "official_link": "https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/strengthening-our-frontier-safety-framework/frontier-safety-framework_3-1.pdf"
+      }
+    ],
+    "method_caveats": [
+      "Corpus threads and instruments are sourced from the cross-framework synthesis only; the per-framework one-pagers are sourced only for framework-specific verdicts. The artefacts were written at different instrument maturity and are not parallel comparative inputs.",
+      "Honest dating: the RSP artefacts predate threads T9 and T10 and both instruments; the OpenAI artefacts predate the three-lab resolutions. Two-lab framings in those documents were true at their close dates and are superseded here by the cluster picture.",
+      "The external-override pattern (T9) is cited only at its held confidence: a developing situation, two instances; the DeepMind not-yet-found is a not-yet-found, never an absence.",
+      "Any verbatim quotation from the RAND weight-security report is drawn from the report PDF (Nevo et al. 2024, RRA2849-1), not from secondary characterisation."
+    ]
+  },
+  "verbs": {
+    "headline": "delay, halt, none",
+    "items": [
+      {
+        "framework": "rsp",
+        "verb": "delay",
+        "line": "\"we will delay AI development and deployment as needed\"",
+        "detail": "The RSP's operative verb is delay: \"we will delay AI development and deployment as needed\", twice in Appendix A, with a third occurrence that disclaims it (\"we will not necessarily delay\") and a softer register (\"we would strongly consider pausing\") confined to preamble and changelog, outside the commitments.",
+        "citation": {
+          "artefact": "Sections 1 and 2.3",
+          "primary": "RSP v3.3, Appendix A"
+        }
+      },
+      {
+        "framework": "openai",
+        "verb": "halt",
+        "line": "at Critical, halt further development",
+        "detail": "OpenAI carries the cluster's only hard stop, halt, three times, operative at Critical.",
+        "citation": {
+          "artefact": "Sections 1 and 2.3",
+          "primary": "Preparedness Framework v2, Critical threshold"
+        }
+      },
+      {
+        "framework": "fsf",
+        "verb": "none",
+        "line": "no halt, stop, pause, suspend, or delay appears anywhere in its text",
+        "detail": "The FSF contains no member of the family at all: no halt, stop, pause, suspend, or delay anywhere in its text, a verified absence. DeepMind has designed a kill switch for its models and none for its decisions.",
+        "citation": {
+          "artefact": "Sections 1 and 2.3",
+          "primary": "FSF v3.1, word-boundary search, 10 July 2026"
+        }
+      }
+    ]
+  },
+  "pipeline_matrix": {
+    "caption": "Stage placements per the corpus four-stage pipeline instrument (I1), completed across the cluster 9 July 2026. Each lab's hollow marked bold; remaining cells are characterised, not ranked.",
+    "stages": [
+      {
+        "id": "define",
+        "label": "Define",
+        "gloss": "define the capability line"
+      },
+      {
+        "id": "detect",
+        "label": "Detect",
+        "gloss": "detect the crossing"
+      },
+      {
+        "id": "decide",
+        "label": "Decide",
+        "gloss": "decide the response"
+      },
+      {
+        "id": "enforce",
+        "label": "Enforce",
+        "gloss": "be made to act"
+      }
+    ],
+    "headline": "Three labs are hollow at three different stages, so no two fail in the same place, and an overlay of all three covers the whole pipeline with hollows.",
+    "headline_plain": "Read each framework as a four-link chain: define the capability line, detect the crossing, decide the response, and be made to act. A hollow is a framework's weakest link, the stage where its machinery is thinnest. Each lab's hollow sits at a different stage, so no two fail in the same place, and laid over each other the three leave no part of the chain without a hole. Select any cell for its verdict and source.",
+    "cells": [
+      {
+        "stage": "define",
+        "framework": "rsp",
+        "hollow": true,
+        "verdict": "Hollow. The cluster's softest lines",
+        "detail": "Against that, the RSP's capability lines are the softest of the three, which is its hollow stage.",
+        "citation": {
+          "artefact": "Section 2.1"
+        }
+      },
+      {
+        "stage": "define",
+        "framework": "openai",
+        "hollow": false,
+        "verdict": "Sharp categories; the credited template",
+        "detail": "OpenAI documents the inheritance in its own footnotes, crediting Anthropic's RSP for its report structure and Meta's framework for its Tracked-Category criteria.",
+        "citation": {
+          "artefact": "Section 2.1",
+          "primary": "Preparedness Framework v2, footnotes"
+        }
+      },
+      {
+        "stage": "define",
+        "framework": "fsf",
+        "hollow": false,
+        "verdict": "Sharpest: two tiers; the most quantified threshold written",
+        "detail": "DeepMind then raises the template twice: the cluster's only two-tier threshold structure, with Tracked Capability Levels sitting below the Critical ones, and the most quantified single threshold any lab has written, the ML R&D automation line.",
+        "citation": {
+          "artefact": "Section 2.1"
+        }
+      },
+      {
+        "stage": "detect",
+        "framework": "rsp",
+        "hollow": false,
+        "verdict": "Self-judged evaluation triggers; fuzzy off-cycle conditions",
+        "detail": "The RSP's evaluation triggers arm on determinations Anthropic makes about its own models, with the off-cycle disclosure conditions fuzzy enough that judgement has room to move.",
+        "citation": {
+          "artefact": "Section 2.2"
+        }
+      },
+      {
+        "stage": "detect",
+        "framework": "openai",
+        "hollow": false,
+        "verdict": "Tracked Categories evaluated; Research Categories named but untriggered",
+        "detail": "OpenAI evaluates its Tracked Categories on a defined footing but carries a second class, Research Categories, that are named and wired to nothing: sandbagging, a model deliberately underperforming under evaluation, sits in the framework as a recognised hazard with no trigger attached.",
+        "citation": {
+          "artefact": "Section 2.2"
+        }
+      },
+      {
+        "stage": "detect",
+        "framework": "fsf",
+        "hollow": false,
+        "verdict": "Middling: real machinery, self-set cadence, a skip valve, detector coupled to the detected",
+        "detail": "The FSF's cadence is event-driven and self-set: alert thresholds placed \"marginally\" before the critical lines with the margin never quantified, assessments after significant post-training runs, and a footnote-4 valve permitting the assessment to be skipped. The FSF adds the cluster's most structurally interesting detection problem: in the ML R&D domain, the thing being measured is partly DeepMind's own research trajectory, so the detector and the detected are the same organisation's progress.",
+        "citation": {
+          "artefact": "Section 2.2",
+          "primary": "FSF v3.1, footnote 4"
+        }
+      },
+      {
+        "stage": "decide",
+        "framework": "rsp",
+        "hollow": false,
+        "verdict": "Board and LTBT gate: the most exterior lever in the cluster, still in-house",
+        "detail": "The RSP's strongest lever runs through Board approval and the Long-Term Benefit Trust, a semi-detached body with real powers, still Anthropic architecture.",
+        "citation": {
+          "artefact": "Section 2.3"
+        }
+      },
+      {
+        "stage": "decide",
+        "framework": "openai",
+        "hollow": false,
+        "verdict": "Routes to a Leadership-appointed SAG",
+        "detail": "OpenAI's determinations route to a Safety Advisory Group that Leadership appoints, resources, and can overrule; its one quasi-external body, the board's safety committee, has been tested against Leadership once, in November 2023, and Leadership prevailed.",
+        "citation": {
+          "artefact": "Section 2.3"
+        }
+      },
+      {
+        "stage": "decide",
+        "framework": "fsf",
+        "hollow": true,
+        "verdict": "Hollow. A self-certifying acceptance determination by an unnamed function",
+        "detail": "The FSF names no body at all: its decider is an \"appropriate governance function\" with no membership, appointment, tenure, or reporting lines anywhere in the document, and its sole external touchpoint, information-sharing with authorities at 5.2, is self-triggered voice.",
+        "citation": {
+          "artefact": "Section 2.3",
+          "primary": "FSF v3.1, 1.3.5, Section 4, 5.2"
+        }
+      },
+      {
+        "stage": "enforce",
+        "framework": "rsp",
+        "hollow": false,
+        "verdict": "Failable core: the strongest back end of the three",
+        "detail": "The RSP comes closest by construction: it carries a genuine failable core, obligations an outsider could watch it break, including ASL-3 safeguard maintenance, report cadence, the external-review conjunction, and the Board and LTBT approval gate. That makes it the strongest back end of the three, and still a self-enforced one.",
+        "citation": {
+          "artefact": "Section 2.4"
+        }
+      },
+      {
+        "stage": "enforce",
+        "framework": "openai",
+        "hollow": true,
+        "verdict": "Hollow. Safeguards held to a standard that declares itself illustrative",
+        "detail": "Table 1 requires safeguards \"meeting High standard\", and the appendix that standard points to opens by declaring itself illustrative and not definitive, so the obligation dissolves in its own reference; its security appendix cites ISO 27001, SOC2, NIST SP 800-53 and FedRAMP, and attests to none of them.",
+        "citation": {
+          "artefact": "Section 2.4",
+          "primary": "Preparedness Framework v2, Table 1 and Appendix C.1"
+        }
+      },
+      {
+        "stage": "enforce",
+        "framework": "fsf",
+        "hollow": false,
+        "verdict": "Soft, bar one hard patch: the RAND-benchmarked security levels",
+        "detail": "That is the closest any frontier framework comes to external machinery, and it is a benchmark, not an attestation: no third party verifies the levels are met, the scope is one axis (weight theft), and it sits on internally adjustable footings, the 2.2 downgrade valve and the 1.3.5 branches. An externally defined bar, still internally judged.",
+        "citation": {
+          "artefact": "Section 2.4",
+          "primary": "FSF v3.1, 2.2 and 1.3.5; RAND RRA2849-1"
+        }
+      }
+    ]
+  },
+  "reversibility_ranking": {
+    "headline": "Reversibility is where the cluster separates by a distance.",
+    "key": "Every framework in the cluster carries pre-authorised routes around its own obligations, exercisable under competitive or benefit pressure, all self-judged. The corpus calls these valves, and the discrete-clause kind, findable and watchable, hatches. The instrument that separates them is not how well-guarded each valve is but two harder questions: which direction does it open, and can what it releases be recalled?",
+    "key_plain": "Hatches and valves are the ways a framework lets itself off its own rules. A hatch is a door: one clause, findable, watchable. A valve is plumbing: escape woven through the machinery. The test for both: which way does it open, and can what it releases be recalled?",
+    "items": [
+      {
+        "rank": 1,
+        "framework": "rsp",
+        "mechanism": "Appendix A delay commitment",
+        "type": "hatch",
+        "line": "The RSP's default, delay, is fully reversible: nothing has left the building.",
+        "citation": {
+          "artefact": "Section 4",
+          "primary": "RSP v3.3, Appendix A"
+        }
+      },
+      {
+        "rank": 2,
+        "framework": "openai",
+        "mechanism": "Section 4.3 safeguard loosening",
+        "type": "hatch",
+        "line": "OpenAI's loosened safeguards sit on a model it still operates: levers retained.",
+        "citation": {
+          "artefact": "Section 4",
+          "primary": "Preparedness Framework v2, 4.3"
+        }
+      },
+      {
+        "rank": 3,
+        "framework": "fsf",
+        "mechanism": "Open-weights branch of the acceptance determination",
+        "type": "valve",
+        "line": "Open-weighting has no levers afterwards: nothing recalled, nothing patched, nothing un-released.",
+        "note": "The least reversible act in the cluster is, in drafting terms, routine.",
+        "citation": {
+          "artefact": "Section 4",
+          "primary": "FSF v3.1, 1.3.5"
+        }
+      }
+    ]
+  },
+  "obligation_bins": {
+    "caption": "Three distributions of the same total softness. The underdetermined bin holds obligations that are neither failable nor clean aspiration: real machinery runs, nothing in the text compels it.",
+    "caption_plain": "Every obligation in these frameworks falls into one of three bins. Failable: a promise an outsider could watch being broken. Unfailable: a promise written so it cannot be, an aim with no test attached. Underdetermined is the odd one: real machinery actually runs, but nothing in the text compels it, so if it stopped tomorrow no promise would break. All three frameworks are soft; the table shows where each one keeps its softness.",
+    "roads": {
+      "openai": "a missing standard (a bar hollowed by the reference it points to)",
+      "fsf": "a self-referential standard (a bar written at the moment of determination, by the determiner)"
+    },
+    "bins": [
+      {
+        "bin": "Failable commitments",
+        "rsp": "A real core",
+        "openai": "A real core",
+        "fsf": "A thin, hard shell"
+      },
+      {
+        "bin": "Underdetermined",
+        "rsp": "Empty",
+        "openai": "One occupant",
+        "fsf": "The framework's substantive centre"
+      },
+      {
+        "bin": "Unfailable aspirations",
+        "rsp": "The halo",
+        "openai": "The halo",
+        "fsf": "The remainder"
+      }
+    ],
+    "finding": "The FSF's column is the finding: population inversion, the middle bin holding not one stray obligation but the framework's substantive centre.",
+    "citation": {
+      "artefact": "Section 3"
+    }
+  }
+}
