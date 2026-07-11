@@ -10,25 +10,34 @@ The corpus proceeds by sequential deep-dives, one framework at a time, each read
 
 Each thread is a cross-framework question. The one-line entries below say what each thread asks; the analysis and its current state live in the private synthesis, and the published artefacts carry whatever conclusions have been verified.
 
-- **T1 -- The inversion.** Whether any framework holds both certifiable audit machinery and substantive outcome commitments, or whether the corpus splits them: audit without substance on one side, substance without audit on the other.
-- **T2 -- On-switch location.** Where the power to trigger a framework's stopping mechanism actually sits: who determines a line has been crossed, and whether any such determination lives outside the authoring organisation.
-- **T3 -- Honesty and discretion in the same clause.** How frameworks combine candid acknowledgement of risk with drafting that preserves the author's freedom of action, and what that combination does to the resulting obligation.
-- **T4 -- The failability test.** Whether an obligation can be observably broken by an outsider reading the text: sorting commitments into failable, underdetermined and unfailable, and asking where each framework's substance sits.
-- **T5 -- Bridge versus substitute, restated as a tempo race.** Whether credible voluntary frameworks increase the pressure for binding regulation or relieve it, and whether governance can move at the speed of the technology it governs.
-- **T6 -- The template-setting loop (certify the height).** How frontier frameworks copy one another's form, and whether that convergence raises the bar or standardises its softness.
-- **T7 -- Govern-at-the-speed.** Which clocks in a framework bind decisions and actions, which bind only publications, and what remains untimed when speed matters most.
-- **T8 -- The gaps map.** Not what each framework does, but what each fails to do, and whether another framework fills that exact gap.
-- **T9 -- The external on-switch being built from outside.** Whether external state action can come to function as an override on lab self-governance. Held as a developing question, cited only at that register.
-- **T10 -- The two-document split.** What it means when a lab's model-level safety framework and its system-level control work live in separate documents with separate statuses, and whether they ever merge.
+- **T1: The inversion.** Whether any framework holds both certifiable audit machinery and substantive outcome commitments, or whether the corpus splits them: audit without substance on one side, substance without audit on the other.
+- **T2: On-switch location.** Where the power to trigger a framework's stopping mechanism actually sits: who determines a line has been crossed, and whether any such determination lives outside the authoring organisation.
+- **T3: Honesty and discretion in the same clause.** How frameworks combine candid acknowledgement of risk with drafting that preserves the author's freedom of action, and what that combination does to the resulting obligation.
+- **T4: The failability test.** Whether an obligation can be observably broken by an outsider reading the text: sorting commitments into failable, underdetermined and unfailable, and asking where each framework's substance sits.
+- **T5: Bridge versus substitute, restated as a tempo race.** Whether credible voluntary frameworks increase the pressure for binding regulation or relieve it, and whether governance can move at the speed of the technology it governs.
+- **T6: The template-setting loop (certify the height).** How frontier frameworks copy one another's form, and whether that convergence raises the bar or standardises its softness.
+- **T7: Govern-at-the-speed.** Which clocks in a framework bind decisions and actions, which bind only publications, and what remains untimed when speed matters most.
+- **T8: The gaps map.** Not what each framework does, but what each fails to do, and whether another framework fills that exact gap.
+- **T9: The external on-switch being built from outside.** Whether external state action can come to function as an override on lab self-governance. Held as a developing question, cited only at that register.
+- **T10: The two-document split.** What it means when a lab's model-level safety framework and its system-level control work live in separate documents with separate statuses, and whether they ever merge.
 
 ## The instruments
 
-- **I1 -- The four-stage pipeline.** Every stopping mechanism is read as a pipeline: define the capability line, detect the crossing, decide the response, be made to act. Each framework is placed at all four stages and its hollow stage identified. The comparative's central matrix is this instrument's completed cluster pass.
-- **I2 -- Reversibility of the escape routes.** Every framework's pre-authorised routes around its own obligations are catalogued (discrete hatches and woven valves) and ranked by whether the world can be put back afterwards. Order is the finding.
+- **I1: The four-stage pipeline.** Every stopping mechanism is read as a pipeline: define the capability line, detect the crossing, decide the response, be made to act. Each framework is placed at all four stages and its hollow stage identified. The comparative's central matrix is this instrument's completed cluster pass.
+- **I2: Reversibility of the escape routes.** Every framework's pre-authorised routes around its own obligations are catalogued (discrete hatches and woven valves) and ranked by whether the world can be put back afterwards. Order is the finding.
 
 ## Verification
 
-Claims that carry analytical weight are checked against primary sources before they stand: verification tasks (V1 to V6 in the consistency pass) covered, among others, version-by-version document trajectories, verified textual absences by word-boundary search, and third-party attributions checked to the cited report. Corrections reach every copy of every affected document and are logged. The method's working rule: a corpus that contradicts itself and says so is worth more than one that agrees with itself by suppression.
+Claims that carry analytical weight are checked against primary sources before they stand. Corrections reach every copy of every affected document and are logged. The consistency pass that gated the flagship comparative ran six such tasks (closed 10 July 2026), the worked example of the class:
+
+- **V1: The version trajectory.** One framework's governance and accountability content traced across all four of its published versions, against the documents themselves rather than summaries of them.
+- **V2: The textual absences.** Claimed absences (no stop verb anywhere in a framework; a footnoted skip valve as characterised) settled by word-boundary search of the full text, not by reading impression.
+- **V3: The attribution.** A third-party security benchmark checked to the cited report and to the framework's own footnote, so the citation chain holds end to end.
+- **V4: The grain, two-sided.** A corpus-wide pattern claim tested against the primary documents' own change records with counter-evidence deliberately sought, not just confirmation.
+- **V5: The characterisation and leakage check.** A companion document's characterisation verified against the lodged source, including that none of its withheld figures had crept into any published artefact.
+- **V6: The doctrinal comparison, sourced.** An analogy drawn from safety-critical industry regulation traced to the statute and regulator guidance it rests on, to citation standard.
+
+The method's working rule: a corpus that contradicts itself and says so is worth more than one that agrees with itself by suppression.
 
 ## Production note
 
