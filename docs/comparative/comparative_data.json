@@ -5,7 +5,7 @@
     "source_artefact": "Comparative_Frontier_Labs_10July2026.md",
     "source_artefact_class": "Comparative artefact, first of its class. Frozen at close, dated.",
     "artefact_close_date": "2026-07-10",
-    "render_rule": "Verdict, detail and citation strings are lifted verbatim from the frozen artefact and render unchanged. Fields suffixed _plain are reader-facing glosses authored and ruled by Andrew Bradley (11 July 2026); each renders above its verbatim source line, never in place of it.",
+    "render_rule": "Verdict, detail and citation strings are lifted verbatim from the frozen artefact and render unchanged. Fields suffixed _plain are reader-facing glosses authored and ruled by Andrew Bradley (11 July 2026); each renders above its verbatim source line, never in place of it. The v1.1 extension (12 July 2026) makes each obligation-bin cell an object: bin glosses are the ruled caption gloss split per bin; cell detail strings, where present, are lifted verbatim from Section 3 of the frozen artefact.",
     "frameworks": [
       {
         "id": "rsp",
@@ -281,22 +281,85 @@
     },
     "bins": [
       {
+        "id": "failable",
         "bin": "Failable commitments",
-        "rsp": "A real core",
-        "openai": "A real core",
-        "fsf": "A thin, hard shell"
+        "gloss_plain": "Failable: a promise an outsider could watch being broken.",
+        "cells": {
+          "rsp": {
+            "verdict": "A real core",
+            "detail": "The RSP is the outlier, and creditably so: its obligations split cleanly into a real failable core (ASL-3 safeguard maintenance, report cadence, the external-review conjunction, the Board and LTBT approval gate) and an aspirational halo no one could fail.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "openai": {
+            "verdict": "A real core",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "fsf": {
+            "verdict": "A thin, hard shell",
+            "detail": "The failable residue is a thin, hard shell (the RAND-benchmarked security levels, procedural assessment duties, a safety case required at critical capability, the annual review) around a core that certifies itself.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          }
+        }
       },
       {
+        "id": "underdetermined",
         "bin": "Underdetermined",
-        "rsp": "Empty",
-        "openai": "One occupant",
-        "fsf": "The framework's substantive centre"
+        "gloss_plain": "Underdetermined is the odd one: real machinery actually runs, but nothing in the text compels it, so if it stopped tomorrow no promise would break.",
+        "cells": {
+          "rsp": {
+            "verdict": "Empty",
+            "detail": "When the test was built against the RSP, two bins were enough: every obligation fell cleanly into failable commitment or unfailable aspiration.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "openai": {
+            "verdict": "One occupant",
+            "detail": "OpenAI's \"safeguards meeting High standard\" fits neither bin: real safeguards genuinely run, so it is no clean aspiration, but the standard they must meet declares itself illustrative, so nothing compels them and it is no commitment either. The test needed a third bin, and the corpus calls it underdetermined.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "fsf": {
+            "verdict": "The framework's substantive centre",
+            "detail": "The FSF's column is the finding: population inversion, the middle bin holding not one stray obligation but the framework's substantive centre. The entire deployment-mitigation apparatus and the acceptance criteria it feeds (2.1.2, 3.1.2, resolving at 1.3.5) are real safeguards, genuinely operated, whose obligations end in self-assessment.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          }
+        }
       },
       {
+        "id": "unfailable",
         "bin": "Unfailable aspirations",
-        "rsp": "The halo",
-        "openai": "The halo",
-        "fsf": "The remainder"
+        "gloss_plain": "Unfailable: a promise written so it cannot be, an aim with no test attached.",
+        "cells": {
+          "rsp": {
+            "verdict": "The halo",
+            "detail": "The RSP is the outlier, and creditably so: its obligations split cleanly into a real failable core (ASL-3 safeguard maintenance, report cadence, the external-review conjunction, the Board and LTBT approval gate) and an aspirational halo no one could fail.",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "openai": {
+            "verdict": "The halo",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          },
+          "fsf": {
+            "verdict": "The remainder",
+            "citation": {
+              "artefact": "Section 3"
+            }
+          }
+        }
       }
     ],
     "finding": "The FSF's column is the finding: population inversion, the middle bin holding not one stray obligation but the framework's substantive centre.",
