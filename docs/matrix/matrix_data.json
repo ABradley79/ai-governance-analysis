@@ -1,0 +1,577 @@
+{
+ "product": "what_holds_matrix",
+ "title": "What Holds",
+ "subtitle": "Five Frameworks Under Pressure",
+ "edition": "12 July 2026",
+ "source_artefact": "What_Holds_Five_Frameworks_12July2026.md",
+ "render_rule": "All verdict, section, mark and open-question strings render verbatim from this contract, which is derived from the frozen source artefact; the page composes no analytical text. Regeneration rule from birth: this contract is re-derived whenever a successor edition of the artefact freezes, never edited in place.",
+ "registers": {
+  "species_null": "No referent in this species; justified in the dimension section",
+  "framework_absence": "Referent exists in the species and this framework lacks it; scored, never a null"
+ },
+ "frameworks": [
+  {
+   "id": "iso42001",
+   "name": "ISO/IEC 42001",
+   "species": "Management-system standard",
+   "official_link": "https://www.iso.org/standard/42001",
+   "official_link_verified": "2026-07-10"
+  },
+  {
+   "id": "anthropic_rsp",
+   "name": "Anthropic RSP",
+   "species": "Frontier safety framework",
+   "official_link": "https://www.anthropic.com/responsible-scaling-policy",
+   "official_link_verified": "2026-07-05"
+  },
+  {
+   "id": "openai_pf",
+   "name": "OpenAI Preparedness",
+   "species": "Frontier safety framework",
+   "official_link": "https://openai.com/index/updating-our-preparedness-framework/",
+   "official_link_verified": "2026-07-07"
+  },
+  {
+   "id": "deepmind_fsf",
+   "name": "DeepMind FSF",
+   "species": "Frontier safety framework",
+   "official_link": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+   "official_link_verified": "2026-07-08"
+  },
+  {
+   "id": "nist_ai_rmf",
+   "name": "NIST AI RMF",
+   "species": "Method framework",
+   "official_link": "https://www.nist.gov/itl/ai-risk-management-framework",
+   "official_link_verified": "2026-07-12"
+  }
+ ],
+ "dimensions": [
+  {
+   "id": "species",
+   "n": 1,
+   "label": "1 / species",
+   "register": "ground"
+  },
+  {
+   "id": "scope_bound",
+   "n": 2,
+   "label": "2 / scope and bound parties",
+   "register": "ground"
+  },
+  {
+   "id": "binding_force",
+   "n": 3,
+   "label": "3 / binding force",
+   "register": "ground"
+  },
+  {
+   "id": "define",
+   "n": 4,
+   "label": "4 / define",
+   "register": "direct"
+  },
+  {
+   "id": "detect",
+   "n": 5,
+   "label": "5 / detect",
+   "register": "direct"
+  },
+  {
+   "id": "decide",
+   "n": 6,
+   "label": "6 / decide",
+   "register": "direct"
+  },
+  {
+   "id": "residual_risk",
+   "n": 7,
+   "label": "7 / residual risk",
+   "register": "direct"
+  },
+  {
+   "id": "enforce_stop",
+   "n": 8,
+   "label": "8 / enforce and the stop",
+   "register": "direct"
+  },
+  {
+   "id": "failability",
+   "n": 9,
+   "label": "9 / failability",
+   "register": "direct"
+  },
+  {
+   "id": "revision",
+   "n": 10,
+   "label": "10 / revision",
+   "register": "direct"
+  },
+  {
+   "id": "under_pressure",
+   "n": 11,
+   "label": "11 / under pressure",
+   "register": "direct"
+  }
+ ],
+ "cells": [
+  {
+   "dimension": "species",
+   "framework": "iso42001",
+   "text": "Management-system standard",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "species",
+   "framework": "anthropic_rsp",
+   "text": "Frontier safety framework",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "species",
+   "framework": "openai_pf",
+   "text": "Frontier safety framework",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "species",
+   "framework": "deepmind_fsf",
+   "text": "Frontier safety framework",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "species",
+   "framework": "nist_ai_rmf",
+   "text": "Method framework",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "scope_bound",
+   "framework": "iso42001",
+   "text": "Any organisation building, providing or using AI; binds the certified organisation only, reach stops at tier one",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "scope_bound",
+   "framework": "anthropic_rsp",
+   "text": "Catastrophic risks from Anthropic's own frontier models; binds Anthropic only, under a document its Board can amend",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "scope_bound",
+   "framework": "openai_pf",
+   "text": "Severe harm from OpenAI's frontier models, above a quantified floor; binds OpenAI only, amendable by internal process",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "scope_bound",
+   "framework": "deepmind_fsf",
+   "text": "Severe harm from DeepMind's frontier models, four domains, two tiers; binds DeepMind only, with no named officer",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "scope_bound",
+   "framework": "nist_ai_rmf",
+   "text": "All AI, all sectors, full lifecycle; binds no one, and there is no conformance claim to fail",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "binding_force",
+   "framework": "iso42001",
+   "text": "Voluntary standard, third-party certifiable; market pressure, not law",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "binding_force",
+   "framework": "anthropic_rsp",
+   "text": "Voluntary internal policy; reputational and political force, no mechanism for breach",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "binding_force",
+   "framework": "openai_pf",
+   "text": "Voluntary internal policy; reputational and political force, no mechanism for breach",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "binding_force",
+   "framework": "deepmind_fsf",
+   "text": "Voluntary internal policy; reputational force, and breach the hardest of the three to make visible",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "binding_force",
+   "framework": "nist_ai_rmf",
+   "text": "Voluntary by statutory commission, non-regulatory issuer; binding force is always imported",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "define",
+   "framework": "iso42001",
+   "text": "No risk set: a process for finding one. Annex C lists risk sources, not risks; where risk comes from, not what it is",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "define",
+   "framework": "anthropic_rsp",
+   "text": "Hollow stage: four thresholds with explicit threat models, and the softest capability lines in the cluster, self-written and self-evaluated",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "define",
+   "framework": "openai_pf",
+   "text": "Sharp categories on a quantified severity floor, thousands dead or hundreds of billions in damage; the Critical self-improvement line quantified and measurable",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "define",
+   "framework": "deepmind_fsf",
+   "text": "The cluster's sharpest define: two threshold tiers and the most quantified single line any lab has written, on an undefined severity floor",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "define",
+   "framework": "nist_ai_rmf",
+   "text": "Refuses to enumerate: no risk set, no tolerance prescribed; seven trustworthiness characteristics, one necessary, six tradeable",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "detect",
+   "framework": "iso42001",
+   "text": "Audit and monitoring can see drift, off-purpose use included; response discretionary throughout. Detection without a mandatory trigger is awareness, not control",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "detect",
+   "framework": "anthropic_rsp",
+   "text": "Evaluation triggers arm on determinations Anthropic makes about its own models; off-cycle conditions fuzzy enough that judgement has room to move",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "detect",
+   "framework": "openai_pf",
+   "text": "Tracked Categories evaluated on a defined footing; Research Categories named and wired to nothing, sandbagging among them, the hazard that corrupts the evidence itself",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "detect",
+   "framework": "deepmind_fsf",
+   "text": "Real machinery, self-set cadence: alert thresholds \"marginally\" before the lines, margin never quantified; a footnote-4 skip valve; the detector coupled to the detected",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "detect",
+   "framework": "nist_ai_rmf",
+   "text": "The corpus's strongest detection parts: TEVV at every stage, monitoring with response times, builders split from verifiers; every part optional, wired to no response",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "decide",
+   "framework": "iso42001",
+   "text": "Every system decision sits with the organisation; the one external decision is the auditor's, on conformity of the paperwork. The certificate is decided outside; the AI never is",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "decide",
+   "framework": "anthropic_rsp",
+   "text": "Board and LTBT gate on marginal-risk go decisions: the most exterior lever in the cluster, still Anthropic architecture, and revocable by the Board it constrains",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "decide",
+   "framework": "openai_pf",
+   "text": "Routes to a SAG that Leadership appoints, resources and can overrule; the board committee's reversal power, tested once in November 2023, lost",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "decide",
+   "framework": "deepmind_fsf",
+   "text": "Hollow stage: a self-certifying acceptance determination by an unnamed \"appropriate governance function\", against criteria that come into existence at the moment of determination",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "decide",
+   "framework": "nist_ai_rmf",
+   "text": "No referent in this species: the catalogue names the go or no-go outcome and appoints no decider; a method framework equips deciders, it does not appoint them",
+   "register": "species_null",
+   "marks": []
+  },
+  {
+   "dimension": "residual_risk",
+   "framework": "iso42001",
+   "text": "The grid's one named acceptance act: risk owners approve the treatment plan and accept the residual AI risks (6.1.3). A named role signs, inside the house, before any auditor arrives",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "residual_risk",
+   "framework": "anthropic_rsp",
+   "text": "The term does not appear: zero occurrences across the text. What remains after safeguards is never named as a residue, so no one is written down as accepting it",
+   "register": "verdict",
+   "marks": [
+    {
+     "type": "framework_absence",
+     "text": "What remains after safeguards is never named as a residue, so no one is written down as accepting it"
+    }
+   ]
+  },
+  {
+   "dimension": "residual_risk",
+   "framework": "openai_pf",
+   "text": "Self-acceptor at a named chair: Leadership makes all final decisions, \"including accepting any residual risks\". The SAG assesses; the operator's chief accepts",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "residual_risk",
+   "framework": "deepmind_fsf",
+   "text": "Self-acceptor by process: deployment proceeds only after the appropriate governance function determines residual risk acceptable. The author accepts, in the cluster's densest residual-risk vocabulary",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "residual_risk",
+   "framework": "nist_ai_rmf",
+   "text": "Term used, duty absent: defined to Guide 73, documented and disclosed to end users; no acceptance act, no named acceptor, no authority level",
+   "register": "verdict",
+   "marks": [
+    {
+     "type": "framework_absence",
+     "text": "no acceptance act, no named acceptor, no authority level"
+    }
+   ]
+  },
+  {
+   "dimension": "enforce_stop",
+   "framework": "iso42001",
+   "text": "Corrective action and third-party audit; the consequence lands on the certificate, not the system. An operational stop has no referent in this species",
+   "register": "verdict",
+   "marks": [
+    {
+     "type": "species_null",
+     "text": "An operational stop has no referent in this species"
+    }
+   ]
+  },
+  {
+   "dimension": "enforce_stop",
+   "framework": "anthropic_rsp",
+   "text": "Failable core, the strongest back end of the three, still self-enforced; the operative verb is delay, armed on evidence about rivals it cannot obtain, disarmed on belief about itself",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "enforce_stop",
+   "framework": "openai_pf",
+   "text": "Halt written at Critical, the cluster's only hard stop; High safeguards held to a standard whose reference declares itself illustrative. Hard at the verb, hollow at the bar",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "enforce_stop",
+   "framework": "deepmind_fsf",
+   "text": "Soft, bar one hard patch: security levels benchmarked to RAND's externally owned bar, internally judged. No operative stop verb, where both comparators carry one",
+   "register": "verdict",
+   "marks": [
+    {
+     "type": "framework_absence",
+     "text": "No operative stop verb, where both comparators carry one"
+    }
+   ]
+  },
+  {
+   "dimension": "enforce_stop",
+   "framework": "nist_ai_rmf",
+   "text": "No referent in this species: a method framework carries no enforcement of its own; zero musts, fifty shoulds, binding always imported",
+   "register": "species_null",
+   "marks": []
+  },
+  {
+   "dimension": "failability",
+   "framework": "iso42001",
+   "text": "Failable throughout, at the level of process: shall-grade requirements an auditor can catch missing. The trail can fail its audit; nothing here can fail at being safe",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "failability",
+   "framework": "anthropic_rsp",
+   "text": "The outlier, creditably: a clean split into a real failable core an outsider could watch break, and an aspirational halo no one could. Control type degrades as the hazard gets harder to bound",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "failability",
+   "framework": "openai_pf",
+   "text": "Three bins, the middle forced: a real failable core; one underdetermined occupant, a bar hollowed by the reference it points to; the halo",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "failability",
+   "framework": "deepmind_fsf",
+   "text": "Population inversion: the substantive centre sits in the underdetermined bin. A self-assessed obligation is not weakly failable, it is unfailable; the failable residue is a thin, hard shell",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "failability",
+   "framework": "nist_ai_rmf",
+   "text": "The null case, scored: no obligating voice, so contents failable as criteria and unfailable as commitments. The failable instrument is rare. The unfailable one is everywhere",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "revision",
+   "framework": "iso42001",
+   "text": "One edition, December 2023, no amendments; the pen sits with a consensus body, the only one in this grid held by neither the governed nor its political principal",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "revision",
+   "framework": "anthropic_rsp",
+   "text": "Four versions in three months, February to May 2026, the fastest pen in the corpus, held by the Board it constrains, in consultation with the trust that Board created",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "revision",
+   "framework": "openai_pf",
+   "text": "Stable since April 2025, unusual for the cluster; an annual review clock whose satisfaction cannot be observed from outside, since the commitment is to review, not to publish one",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "revision",
+   "framework": "deepmind_fsf",
+   "text": "Four versions on a roughly seven-month cadence, across which the governance section ran backwards, three named councils to one unstructured paragraph: the pen that erased its own oversight",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "revision",
+   "framework": "nist_ai_rmf",
+   "text": "Zero revisions in forty-two months, a versioning system never exercised; now revised on the order of its political principal, ahead of its own promised community review. Both ends of the pen are political",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "under_pressure",
+   "framework": "iso42001",
+   "text": "An incident meets an accountability map, not a response: someone owns the decision when failure comes, ICS logic on paper. It does not prevent failure; it fixes who answers for it, and the system that fails may long since have left the one assessed",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "under_pressure",
+   "framework": "anthropic_rsp",
+   "text": "Holds best in the cluster and holds against no one: the only reversible default, a real failable core, and every engaging trigger a judgement Anthropic makes about itself. Times the situation report; leaves the incident action plan open-ended",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "under_pressure",
+   "framework": "openai_pf",
+   "text": "Holds if Leadership wants it to: the cluster's only hard halt behind a standard that declares itself illustrative and a body Leadership can overrule, tested once, November 2023. Every clock binds housekeeping; the response is untimed",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "under_pressure",
+   "framework": "deepmind_fsf",
+   "text": "Does not hold because there is nothing in it to hold: pressure enters as one more input to acceptance, and a process-centred framework under load does not break, it completes. The least reversible exit in the cluster sits behind one self-assessed call",
+   "register": "verdict",
+   "marks": []
+  },
+  {
+   "dimension": "under_pressure",
+   "framework": "nist_ai_rmf",
+   "text": "A peacetime document: names the wartime vocabulary, appeal and override, incident response, recovery, and never requires the plan, let alone the drill. It does not fail the 2am test; it never enters for it",
+   "register": "verdict",
+   "marks": []
+  }
+ ],
+ "sections": {
+  "species": {
+   "title": "Species",
+   "text": "The three species are the corpus's structural finding and the reason the null grammar exists; the grid declares them before comparing anything. Strings match the corpus dataset the map renders from, so door and matrix speak one language. The frontier three run the threshold-trigger template established at the RSP dive and inherited twice; the published structural notes carry that characterisation. Sources: the five one-pagers' type fields and structural notes."
+  },
+  "scope_bound": {
+   "title": "Scope and bound parties",
+   "text": "Scope takes a different shape in each species, and the shape is the finding. Static for the management system: an organisation and its declared boundary, with reach that stops at tier one of the supply chain. Dynamic for the frontier three: what is governed is defined by capability lines that models cross, and the crossing activates everything else. Edgeless for the method framework: no conformance claim, so no edge; anyone, nothing checkable. One cross-framework observation in this artefact's own voice: all five scopes sit at or above the model and organisation layer; the deployed-system layer, where operational harm actually lands, is inside none of them. Sources: each one-pager's scope and who-it-binds fields; the strain flags carry the shape characterisations verbatim."
+  },
+  "binding_force": {
+   "title": "Binding force",
+   "text": "The three lab cells are near-identical by finding, not by economy: the three published pages describe the same force in the same words, reputational cost without breach mechanism, and the grid should show that uniformity rather than manufacture variety. The outer columns differ in kind, not degree: 42001's force is attestable by a third party; the RMF's is always imported by an instrument someone else must bring. Sources: enforcement-model and who-it-binds fields, all five one-pagers."
+  },
+  "define": {
+   "title": "Define: what must not happen",
+   "text": "The stage where the species invert expectations. The two standards-institution documents decline to define the hazard: the management system runs an enumerable process over a problem it half-concedes is not enumerable, its Annex C offering sources of risk in place of risks; the method framework refuses on principle, measurement being immature and tolerance context-bound, and will not set what it cannot ground. The three voluntary lab documents, by contrast, compete on definition, and upward: OpenAI's own footnotes credit the RSP for its report structure and Meta for its category criteria, and DeepMind then raises the template twice, with the cluster's only two-tier structure and its most quantified single threshold. Only one species defines the hazard; the other two define how an organisation should go about defining it. The floors differ in shape where they exist at all: quantified and single-event at OpenAI, structurally blind to accumulating harm; graded at DeepMind, whose lower tier at least creates a cell for sub-catastrophic capability, on a severity floor the document never defines; and at Anthropic, the cluster's softest lines, its hollow stage. The comparative's caution imports whole and disciplines every cell to its right: definition is the cheap end of the pipeline, and \"a precise line costs analysis; an enforceable consequence costs optionality\". No nulls in this row: every species defines something, and what each declines to define is scored above, not excused. Sources: frontier comparative, pipeline table and section 2.1; the five one-pagers' scope, risk-approach and threshold fields."
+  },
+  "detect": {
+   "title": "Detect: how it would know",
+   "text": "Everyone can see; no one is compelled to act on what they see. The standards-institution documents hold the better parts: NIST's are the strongest in the corpus and 42001's monitoring names off-purpose use, and both leave the response discretionary. The labs' machinery is real and its tempo self-set, with the FSF adding the structural case: in the ML R&D domain the detector is coupled to what it detects, the classic acceleration failure with the coupling written in. The row's finding in one line: detection everywhere, compulsion nowhere, which is the define row's precision problem arriving again one stage later. No nulls. Sources: comparative section 2.2 and pipeline table; 42001 one-pager, monitoring and the assessment-reality gap; NIST one-pager, MEASURE fields."
+  },
+  "decide": {
+   "title": "Decide: who decides, from where",
+   "text": "The operational row, and the cluster answer is nobody. The lab on-switches sit at descending exteriority, a semi-detached trust, then a committee of the company's own board, then an unnamed function, and the direction of travel is worse than the snapshot: across revisions the labs remove substance while accreting governance machinery, and DeepMind alone removed the governance itself. 42001 splits the decision in a way no lab does: conformity is decided outside, the system inside, so the grid's only genuinely external decider decides about paperwork. The NIST null is justified in exactly the auditor's register: the catalogue names the decision and appoints no one, because the species equips deciders rather than appointing them. Cross-framework, in this artefact's own voice: in no species does anyone outside the operating organisation decide about the system itself; where exteriority exists it attaches to attestation or to speech, never to operation. Outside the documents, the state supplied the missing switch twice in June 2026; carried here at the comparative's own low confidence, a developing situation. Sources: comparative section 2.3 and table; enforcement-model and who-it-binds fields, all five one-pagers."
+  },
+  "residual_risk": {
+   "title": "Residual risk: who accepts what remains",
+   "text": "The sharpest single question operations can put to a governance document, because a safety case dies without a named acceptor, and post-Piper Alpha doctrine exists precisely because author-accepted cases failed. Five frameworks give five different answers, and the range is the finding. The management system carries the grid's one named acceptance act: clause 6.1.3 closes by obtaining the risk owners' approval of the AI risk treatment plan and their acceptance of the residual AI risks, a signature written into the process, internal and pre-audit. The RSP is silent in the exact place its comparators speak: both run acceptance grammar, so the missing vocabulary is scored as framework absence, not idiom, and the operational consequence is direct, since a remainder nobody is written down as accepting is a remainder nobody can be held to. OpenAI names the chair, which makes its self-acceptance the most legible in the cluster: you know whose signature the residue sits under, even though the signer owns the launch. The FSF is the mirror, the densest residual-risk vocabulary in the corpus flowing into an acceptor with no name. And NIST, which defines the term most correctly, replaces the signature with a disclosure routed to the party with least control over the risk; it scores rather than nulls, because its own species sibling makes acceptance an Authorizing Official's non-delegable duty, so the referent exists and the omission is a choice. The external acceptor, an authority outside the operator with criteria that pre-exist the determination, is absent across all five. Provenance: word-boundary searches run 12 July 2026 on the lodged texts (RSP zero of 8,359 words; OpenAI five occurrences, acceptance at page 16; FSF thirty-seven; NIST four, Guide 73 at page 13); 42001 swept by OCR across all 61 page images (one occurrence) and the hit confirmed by direct read of the page image, clause 6.1.3. Sources otherwise: FSF one-pager for the safety-case doctrine; NIST one-pager for the SP 800-37 sibling."
+  },
+  "enforce_stop": {
+   "title": "Enforce and the stop",
+   "text": "The verb map is the row's spine, delay, halt, nothing, established by word-boundary search of the primary texts and titling the published comparative. The two-register grammar earns its keep twice in one row. The FSF's missing verb is scored, not excused: the referent exists in its species, both comparators carry one, and the absence is a choice, since DeepMind's adjacent Control Roadmap is dense with stop vocabulary pointed at deployed agents and none at the lab's own decisions. 42001's missing operational stop is ruled the other way, a species null: the management system's native consequence is the attestation, a certificate can be suspended, the system cannot be stopped by it, which refines rather than contradicts the published contrast line, absent as species, not as drafting. The RAND patch stands as the closest any framework comes to external machinery, a benchmark rather than an attestation. The row lands where the corpus keeps landing: auditable emptiness or unauditable substance, and nothing yet holds both. Sources: comparative sections 2.3 and 2.4, title and pipeline table; RSP one-pager, Appendix A and the 42001 contrast; 42001 and NIST one-pagers."
+  },
+  "failability": {
+   "title": "Failability: who can be caught",
+   "text": "The row that answers the title most directly, because a thing that cannot fail cannot be said to hold. The management system is failable everywhere and only at process: its shall-grade requirements give an auditor real purchase, and the purchase is on the trail, never on the system's safety. The labs distribute one shared softness three ways. The RSP splits cleanly, a genuine failable core ringed by a halo, with the less creditable second-order pattern that its control type degrades as the hazard hardens: concrete hazards get real controls, emergent ones get disclosure promises, the half-mitigation pattern from operational practice in frontier dress. OpenAI forced the third bin by a missing standard, a bar that dissolves in its own reference. The FSF settled what the bin is and showed it can be a centre of mass, its road in being self-reference rather than absence, which matters operationally: an auditor checking for missing standards passes the FSF, which has none to miss. And the row's resolving finding, carried from the ledger: subjectivity does not weaken an obligation, it dissolves failability altogether, since any outcome complies. NIST scores in its own published words, the null case where nothing obliges at all. Sources: frontier comparative, section 3 and the bin table; the one-pagers' obligations fields; 42001 key obligations and enforcement model."
+  },
+  "revision": {
+   "title": "Revision: who holds the pen",
+   "text": "The axis is already published in the corpus: ISO revises through a consensus body, the labs revise themselves, and the US framework is revised by its political principal. This grid adds the tempo spread and the direction of travel. Tempo runs from four versions in three months to zero in forty-two, and neither extreme comforts: a framework that cannot hold its own shape cannot promise to hold yours, and a pen never exercised means no feedback loop ever closed, so stability reads as neglect as easily as maturity; the one loop NIST did complete was political. Direction is the sharper finding: across lab revisions, substance tends to leave while governance machinery accretes, and DeepMind alone removed the governance itself, its section thinning as the framework matured. OpenAI sits between the extremes with a clock nobody outside can hear tick. Sources: frontier comparative, section 2.3; the one-pagers' status and who-binds fields."
+  },
+  "under_pressure": {
+   "title": "Under pressure: the operational read",
+   "text": "The title asked with the clock running: a capability line crossed, a competitor shipping, a board divided, hours not weeks. Twenty years of crisis practice reduce to one design principle for that moment: the decision must be cheaper than the deliberation, which is why incident command pre-delegates authority to named roles, pre-commits actions before anyone is frightened, and drills the arrangement until executing beats arguing. Measured against that, not one of the five names the person who throws the switch, times their decision, or drills the throw. The clocks alone make the case: across the cluster there are zero response clocks on any model, and the single model-attached clock that exists times a publication, which is precisely backwards for crisis machinery, where the action is timed and the paperwork follows. The management system's contribution is real and lies one layer down: it fixes who answers for the failure, ICS's own logic, while saying nothing about the response and attesting to a system that the three drifts may already have carried away from its assessment. The method framework never arrives at the scene at all. The citable counter-model sits in the published comparative: the offshore safety-case regime built after Piper Alpha, where the case is accepted by a competent authority against criteria that pre-exist it, a named duty holder stands behind it, material change bars operation until a revised case is accepted, and the regulator can suspend; the FSF keeps that regime's author and deletes everything that disciplined him. And the deepest pressure problem is now visible to all three labs in ascending strength, the hazard that corrupts their own evidence base, met by none with structurally different machinery: ascending diagnosis, level treatment. The row's close, in this artefact's own voice: at the point of maximum load, each of the five resolves into fine instrumentation around a decision the document cannot compel. No nulls in this row; never entering is a verdict. Sources: frontier comparative, sections 4 and 5; the crisis-resilience fields of all five one-pagers."
+  }
+ },
+ "open_questions": [
+  "The on-switch test, corpus-wide: does any future version of any framework move a single determination outside the building? Any external certification of a crossing, condition or redaction call would be the first structural break in the pattern.",
+  "OpenAI's Critical standard: the cluster's only hard stop points at a standard not yet written, to be authored and judged met by the same body. The day it is written, the halt either acquires content or is confirmed hollow.",
+  "The acceptance question this grid sharpened: does any framework anywhere in the corpus acquire an external acceptor, and would importing one on the offshore model break the self-certification pattern or be absorbed by it?",
+  "The NIST revision landing: what the political pen removes, whether the edit reaches the profile, and whether the promised community review survives the tasking.",
+  "The state's external switch: two instances in June 2026, held at low confidence as a developing situation; whether the executive-order evaluation process materialises on its August 2026 target decides if the switch the frameworks declined to build is being built from outside."
+ ]
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What holds / prototype v1.3</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1d21;--muted:#63686e;--faint:#9aa0a6;--paper:#fdfdfc;--card:#ffffff;--line:#e6e6e2;--line-strong:#d2d2cc;--signal:#c03b22;--signal-soft:#fbeeea;--serif:"IBM Plex Serif",Georgia,serif;--sans:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--sans);padding:28px 18px}
+.panelw{max-width:1100px;margin:0 auto}
+h1{font:600 26px/1.2 var(--serif);margin:0}.sub{font:400 12px/1.5 var(--mono);color:var(--muted);margin:6px 0 0}
+.stamp{font:400 11px/1.5 var(--mono);color:var(--faint);margin:4px 0 14px}
+.leg{display:flex;gap:16px;flex-wrap:wrap;margin:0 0 12px;font:400 11.5px/1 var(--mono);color:var(--muted)}
+.leg span{display:inline-flex;align-items:center;gap:6px}.sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+.wrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:6px}
+table{width:100%;min-width:980px;border-collapse:collapse;table-layout:fixed;font-size:12px;line-height:1.5}
+th{font:500 11.5px/1.4 var(--mono);text-align:left;padding:8px 7px;border-bottom:1px solid var(--line-strong);vertical-align:bottom}
+td{padding:0;border-bottom:1px solid var(--line);vertical-align:top}
+td.dim{font:500 11px/1.5 var(--mono);color:var(--muted);padding:8px 7px}
+button.cell{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;padding:8px 7px;cursor:pointer}
+button.cell:hover{background:var(--paper)}button.cell:focus-visible{outline:2px solid var(--signal);outline-offset:-2px}
+tr.gnd button.cell,tr.gnd td.dim{color:var(--muted)}tr.gnd{background:var(--paper)}
+.nulcell,.nul{color:var(--faint);font-style:italic}.nul{border-left:2px dotted var(--line-strong);padding-left:7px;display:inline-block}
+.abs{border-left:3px solid var(--signal);padding-left:7px;display:inline-block}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:-1px}
+#panel{display:none;margin-top:14px;background:var(--card);border:1px solid var(--line-strong);border-left:3px solid var(--phue,var(--line-strong));border-radius:4px;padding:18px 18px 14px}
+#panel .eyebrow{font:500 11px/1 var(--mono);color:var(--muted);letter-spacing:.06em;margin:0 0 6px}
+#panel h2{font:600 18px/1.3 var(--serif);margin:0 0 10px}
+#panel .reg{font:400 11.5px/1.5 var(--mono);color:var(--signal);margin:0 0 10px}
+#panel .verdict{font:500 14px/1.6 var(--sans);margin:0 0 12px;padding:10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:3px}
+#panel .sect{font:400 13.5px/1.7 var(--sans);white-space:pre-wrap;margin:0 0 12px}
+#panel .links{font:400 12px/1.6 var(--mono);border-top:1px solid var(--line);padding-top:10px}
+#panel .links a{color:var(--ink);border-bottom:1px dotted var(--line-strong);text-decoration:none;margin-right:16px}
+#panel .close{float:right;font:500 11px/1 var(--mono);background:none;border:1px solid var(--line-strong);border-radius:3px;padding:5px 8px;cursor:pointer;color:var(--muted)}
+.cell.sel{background:var(--signal-soft)}
+.foot{font:400 11px/1.6 var(--mono);color:var(--faint);margin:12px 0 0}
+</style></head><body><div class="panelw">
+<h1>What holds</h1><p class="sub">Five frameworks under pressure / assessed-frameworks matrix / prototype v1.3</p>
+<p class="stamp" id="stamp">scripts not running / open this file in a browser</p>
+<div class="leg"><span><span class="sw" style="background:var(--card);border:1px solid var(--line-strong)"></span>verdict</span><span><span class="sw" style="border:2px dotted var(--line-strong)"></span>species null / justified</span><span><span class="sw" style="background:var(--signal)"></span>framework absence / scored</span><span><span class="sw" style="background:var(--paper);border:1px solid var(--line)"></span>ground line</span></div>
+<div class="wrap"><table id="grid"></table></div>
+<div id="panel" role="region" aria-live="polite"></div>
+<p class="foot">every cell opens its panel / verdict verbatim, section, citation, links / esc closes</p>
+</div>
+<script>
+fetch('matrix_data.json')
+ .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+ .then(render)
+ .catch(err=>{document.getElementById('stamp').textContent='matrix_data.json failed to load';console.error(err);});
+function render(C){
+const HUE={"Management-system standard": "#5f8380", "Frontier safety framework": "#8c5a45", "Method framework": "#4f6178"};
+document.getElementById('stamp').textContent='rendered from matrix_data.json / derived from '+C.source_artefact+' / edition '+C.edition;
+const esc=v=>{const s=(typeof v==='string')?v:String(v??'');return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
+function cellHtml(c){let t=esc(c.text);
+ for(const m of c.marks){const mt=esc(m.text);t=t.replace(mt,'<span class="'+(m.type==='species_null'?'nul':'abs')+'">'+mt+'</span>');}
+ if(c.register==='species_null')t='<span class="nul">'+t+'</span>';
+ return t;}
+const g=document.getElementById('grid');
+let h='<colgroup><col style="width:110px">'+C.frameworks.map(()=>'<col>').join('')+'</colgroup><tr><th></th>'+C.frameworks.map(f=>'<th>'+esc(f.name)+'</th>').join('')+'</tr>';
+for(const d of C.dimensions){
+ h+='<tr'+(d.register==='ground'?' class="gnd"':'')+'><td class="dim">'+esc(d.label)+'</td>';
+ for(const f of C.frameworks){const c=C.cells.find(x=>x.dimension===d.id&&x.framework===f.id);
+  let inner = d.id==='species' ? '<span class="dot" style="background:'+(HUE[c.text]||'#999')+'"></span>'+esc(c.text) : cellHtml(c);
+  h+='<td><button class="cell" data-d="'+d.id+'" data-f="'+f.id+'">'+inner+'</button></td>';}
+ h+='</tr>';}
+g.innerHTML=h;
+const P=document.getElementById('panel');
+g.addEventListener('click',e=>{const b=e.target.closest('button.cell');if(!b)return;g.querySelectorAll('button.cell.sel').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');openPanel(b.dataset.d,b.dataset.f);});
+function openPanel(did,fid){
+ const d=C.dimensions.find(x=>x.id===did),f=C.frameworks.find(x=>x.id===fid);
+ const c=C.cells.find(x=>x.dimension===did&&x.framework===fid),s=C.sections[did];
+ const sp=C.cells.find(x=>x.dimension==='species'&&x.framework===fid).text;
+ P.style.setProperty('--phue',HUE[sp]||'#999');
+ let reg='';
+ if(c.register==='species_null')reg='<p class="reg">species null / '+esc(C.registers.species_null)+'</p>';
+ else if(c.marks.some(m=>m.type==='framework_absence'))reg='<p class="reg">framework absence / '+esc(C.registers.framework_absence)+'</p>';
+ else if(c.marks.some(m=>m.type==='species_null'))reg='<p class="reg">clause-level species null / '+esc(C.registers.species_null)+'</p>';
+ P.innerHTML='<button class="close" onclick="this.parentNode.style.display=\'none\'">close / esc</button>'
+ +'<p class="eyebrow">'+esc(d.label)+' / '+esc(f.name)+' / '+esc(sp)+'</p><h2>'+esc(s.title)+'</h2>'+reg
+ +'<div class="verdict">'+cellHtml(c)+'</div><div class="sect">'+esc(s.text)+'</div>'
+ +'<div class="links"><a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/'+C.source_artefact+'" target="_blank" rel="noopener">frozen artefact (live at commit one)</a>'
+ +(f.official_link?'<a href="'+esc(f.official_link)+'" target="_blank" rel="noopener">official source</a>':'<span>official source: see SOURCES.md</span>')+'</div>';
+ P.style.display='block';P.scrollIntoView({behavior:'smooth',block:'nearest'});}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')P.style.display='none';});
+}
+</script></body></html>
