@@ -22,6 +22,7 @@ Each deep-dive closes with a one-page analysis: scope, thresholds and triggers, 
 | [Anthropic RSP v3.3](one-pagers/Anthropic_RSP_one-pager.md) | 5 July 2026 | Real substance, self-held enforcement. A framework that constrains itself from inside the thing it is constraining. |
 | [OpenAI Preparedness v2](one-pagers/OpenAI_Preparedness_one-pager.md) | 7 July 2026 | Sharper at the line, softer at the consequence. Precise thresholds wired to an illustrative response, with every lever inside the building. |
 | [DeepMind FSF v3.1](one-pagers/DeepMind_FSF_one-pager.md) | 9 July 2026 | The sharpest front end in the cluster, wired to a decide stage that certifies itself. Every substantive road in the document ends at "we assess". |
+| [NIST AI RMF 1.0](one-pagers/NIST_AI_RMF_one-pager.md) | 11 July 2026 | A method framework, not a management system: governs nothing and equips governing. The failable instrument is rare. The unfailable one is everywhere. |
 
 ## Method
 
