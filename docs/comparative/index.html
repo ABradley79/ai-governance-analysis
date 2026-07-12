@@ -176,7 +176,7 @@ summary:hover{color:var(--ink)}
 
 <footer>
   <details><summary>Method note: four caveats</summary><div id="caveats"></div></details>
-  <p class="foot-links"><a href="https://github.com/ABradley79/ai-governance-analysis">Repository</a> &middot; <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/METHOD.md">METHOD.md</a> &middot; <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/comparative-artefacts/Comparative_Frontier_Labs_10July2026.md">Frozen artefact: Comparative_Frontier_Labs_10July2026.md</a></p>
+  <p class="foot-links"><a href="https://github.com/ABradley79/ai-governance-analysis">Repository</a> / <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/METHOD.md">METHOD.md</a> / <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/comparative-artefacts/Comparative_Frontier_Labs_10July2026.md">Frozen artefact: Comparative_Frontier_Labs_10July2026.md</a></p>
   <p class="prov" id="prov"></p>
 </footer>
 
@@ -192,7 +192,7 @@ function render(DATA) {
 const FW = Object.fromEntries(DATA.meta.frameworks.map(f=>[f.id,f]));
 const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const ARTEFACT_URL = "https://github.com/ABradley79/ai-governance-analysis/blob/main/comparative-artefacts/Comparative_Frontier_Labs_10July2026.md";
-const cite = (c,fw) => `<div class="cite">${c.artefact?`<b>artefact</b> ${esc(c.artefact)}`:""}${c.primary?` &nbsp;&middot;&nbsp; <b>primary</b> ${esc(c.primary)}`:""} &nbsp;&middot;&nbsp; <a href="${ARTEFACT_URL}" target="_blank" rel="noopener">frozen artefact</a>${fw?` &nbsp;&middot;&nbsp; <a href="${FW[fw].official_link}" target="_blank" rel="noopener">official source</a>`:""}</div>`;
+const cite = (c,fw) => `<div class="cite">${c.artefact?`<b>artefact</b> ${esc(c.artefact)}`:""}${c.primary?` &nbsp;/&nbsp; <b>primary</b> ${esc(c.primary)}`:""} &nbsp;/&nbsp; <a href="${ARTEFACT_URL}" target="_blank" rel="noopener">frozen artefact</a>${fw?` &nbsp;/&nbsp; <a href="${FW[fw].official_link}" target="_blank" rel="noopener">official source</a>`:""}</div>`;
 
 /* Header */
 document.getElementById("eyebrow").textContent = DATA.meta.source_artefact_class + " / " + DATA.meta.artefact_close_date;
