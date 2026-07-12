@@ -195,12 +195,12 @@ const ARTEFACT_URL = "https://github.com/ABradley79/ai-governance-analysis/blob/
 const cite = (c,fw) => `<div class="cite">${c.artefact?`<b>artefact</b> ${esc(c.artefact)}`:""}${c.primary?` &nbsp;&middot;&nbsp; <b>primary</b> ${esc(c.primary)}`:""} &nbsp;&middot;&nbsp; <a href="${ARTEFACT_URL}" target="_blank" rel="noopener">frozen artefact</a>${fw?` &nbsp;&middot;&nbsp; <a href="${FW[fw].official_link}" target="_blank" rel="noopener">official source</a>`:""}</div>`;
 
 /* Header */
-document.getElementById("eyebrow").textContent = DATA.meta.source_artefact_class + " · " + DATA.meta.artefact_close_date;
+document.getElementById("eyebrow").textContent = DATA.meta.source_artefact_class + " / " + DATA.meta.artefact_close_date;
 document.getElementById("title").textContent = DATA.meta.title;
 document.getElementById("question").textContent = DATA.meta.question;
 document.getElementById("fwrow").innerHTML = DATA.meta.frameworks.map(f=>
   `<div class="fw"><div class="lab">${esc(f.lab)}</div><div class="doc">${esc(f.name)} ${esc(f.version)}</div>
-   <div class="vv">${esc(f.version_date)} · verified ${esc(f.verified_current)} · <a href="${f.official_link}" target="_blank" rel="noopener">official source</a></div></div>`).join("");
+   <div class="vv">${esc(f.version_date)} / verified ${esc(f.verified_current)} / <a href="${f.official_link}" target="_blank" rel="noopener">official source</a></div></div>`).join("");
 
 /* Verbs */
 document.getElementById("verb-headline").textContent = DATA.verbs.headline;
@@ -219,7 +219,7 @@ verbsEl.querySelectorAll(".verb").forEach(btn=>btn.addEventListener("click",()=>
   if(open){vdetail.classList.remove("open");return}
   btn.setAttribute("aria-expanded","true");
   const v = DATA.verbs.items[btn.dataset.i];
-  vdetail.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[v.framework].lab)} · operative verb</span></div>
+  vdetail.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[v.framework].lab)} / operative verb</span></div>
     <div class="p-detail">${esc(v.detail)}</div>${cite(v.citation,v.framework)}`;
   vdetail.classList.add("open");
 }));
@@ -249,7 +249,7 @@ document.querySelectorAll(".m-cell").forEach(cell=>cell.addEventListener("click"
   const c = pm.cells.find(x=>x.stage===cell.dataset.stage&&x.framework===cell.dataset.fw);
   const st = pm.stages.find(s=>s.id===c.stage);
   mpanel.className = "panel open" + (c.hollow?" hollow-p":"");
-  mpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[c.framework].lab)} · ${esc(st.label)}: ${esc(st.gloss)}</span>${c.hollow?`<span class="p-hollow">hollow stage</span>`:""}</div>
+  mpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[c.framework].lab)} / ${esc(st.label)}: ${esc(st.gloss)}</span>${c.hollow?`<span class="p-hollow">hollow stage</span>`:""}</div>
     <div class="p-verdict">${esc(c.verdict)}</div><div class="p-detail">${esc(c.detail)}</div>${cite(c.citation,c.framework)}`;
   mpanel.scrollIntoView({block:"nearest",behavior:"smooth"});
 }));
@@ -288,14 +288,14 @@ document.querySelectorAll(".b-c[data-bin]").forEach(cell=>cell.addEventListener(
   const row = ob.bins.find(b=>b.id===cell.dataset.bin);
   const c = row.cells[cell.dataset.fw];
   bpanel.className = "panel open";
-  bpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[cell.dataset.fw].lab)} · ${esc(row.bin)}</span></div>
+  bpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[cell.dataset.fw].lab)} / ${esc(row.bin)}</span></div>
     <div class="p-gloss">${esc(row.gloss_plain)}</div>
     <div class="p-verdict">${esc(c.verdict)}</div>
     ${c.detail?`<div class="p-detail">${esc(c.detail)}</div>`:`<div class="p-absent">The frozen artefact's Section 3 carries no cell-specific prose beyond this verdict.</div>`}${cite(c.citation,cell.dataset.fw)}`;
   bpanel.scrollIntoView({block:"nearest",behavior:"smooth"});
 }));
 document.getElementById("b-finding").textContent = ob.finding;
-document.getElementById("b-roads").innerHTML = `Two roads to the same softness. <b>OpenAI:</b> ${esc(ob.roads.openai)} · <b>DeepMind:</b> ${esc(ob.roads.fsf)} <span class="cite" style="border:0;padding:0;display:inline"> · artefact ${esc(ob.citation.artefact)} · <a href="${ARTEFACT_URL}" target="_blank" rel="noopener">frozen artefact</a></span>`;
+document.getElementById("b-roads").innerHTML = `Two roads to the same softness. <b>OpenAI:</b> ${esc(ob.roads.openai)} / <b>DeepMind:</b> ${esc(ob.roads.fsf)} <span class="cite" style="border:0;padding:0;display:inline"> / artefact ${esc(ob.citation.artefact)} / <a href="${ARTEFACT_URL}" target="_blank" rel="noopener">frozen artefact</a></span>`;
 
 /* Footer */
 document.getElementById("caveats").innerHTML = DATA.meta.method_caveats.map(c=>`<p class="caveat">${esc(c)}</p>`).join("");
