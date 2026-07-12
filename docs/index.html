@@ -200,7 +200,10 @@ var linksByFw = {}, linksByCluster = {};
 function pushLink(map,key,link){ (map[key]=map[key]||[]).push(link); }
 D.artefacts.forEach(function(a){
   if(a.covers) a.covers.forEach(function(id){
-    pushLink(linksByFw,id,{kind:"analysis",label:a.title,url:DOC+a.url,sub:"Published analysis, "+dFmt(a.date)});
+    if(a.kind==="matrix")
+      pushLink(linksByFw,id,{kind:"exhibit",label:"What Holds",url:a.url,sub:"Matrix exhibit, "+dFmt(a.date)});
+    else
+      pushLink(linksByFw,id,{kind:"analysis",label:a.title,url:DOC+a.url,sub:"Published analysis, "+dFmt(a.date)});
   });
   if(a.touchpoint_coverage) a.touchpoint_coverage.forEach(function(id){
     pushLink(linksByFw,id,{kind:"touchpoint",label:"Treated within the NIST AI RMF assessment",url:DOC+a.url,sub:"Touchpoint coverage; this framework remains not assessed"});

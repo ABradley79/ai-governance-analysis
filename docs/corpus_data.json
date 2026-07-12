@@ -479,6 +479,20 @@
       "url_interactive": "comparative/",
       "date": "2026-07-10",
       "covers_cluster": "c7"
+    },
+    {
+      "id": "matrix_what_holds",
+      "kind": "matrix",
+      "title": "What Holds: Five Frameworks Under Pressure",
+      "url": "matrix/",
+      "date": "2026-07-12",
+      "covers": [
+        "iso42001",
+        "anthropic_rsp",
+        "openai_pf",
+        "deepmind_fsf",
+        "nist_ai_rmf"
+      ]
     }
   ]
 }
