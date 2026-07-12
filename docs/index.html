@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>State of Play - AI Governance Frameworks Under Pressure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1d21; --muted:#63686e; --faint:#9aa0a6;
+  --paper:#fdfdfc; --card:#ffffff;
+  --line:#e6e6e2; --line-strong:#d2d2cc;
+  --signal:#c03b22; --signal-soft:#fbeeea;
+  --serif:"IBM Plex Serif",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --c1:#5b7089; --c2:#5f8380; --c3:#4f6178; --c4:#6b7f5e;
+  --c5:#7d6478; --c6:#8a7a5c; --c7:#8c5a45; --c8:#7f7350;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* masthead */
+.mast{padding:56px 0 8px;border-bottom:1px solid var(--line-strong)}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 52px/1.05 var(--serif);margin:10px 0 14px;letter-spacing:-.01em}
+.standfirst{max-width:60ch;color:var(--muted);font-size:17px}
+.statusline{font:500 12px/1 var(--mono);color:var(--muted);margin:22px 0 18px;display:flex;gap:18px;flex-wrap:wrap}
+.statusline b{color:var(--ink);font-weight:500}
+.statusline .assessed-n{color:var(--signal)}
+
+/* instruments row */
+.instruments{border-bottom:1px solid var(--line);padding:26px 0 30px}
+.inst-grid{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:end}
+@media(max-width:760px){.inst-grid{grid-template-columns:1fr}}
+.inst-label{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.wave{position:relative;height:76px;border-bottom:1px solid var(--line-strong)}
+.gridline{position:absolute;top:6px;bottom:0;width:1px;background:var(--line)}
+.mstack{position:absolute;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column-reverse;gap:2px}
+.blk{width:13px;height:17px;border-radius:3px;transition:opacity .25s;border:0;padding:0;cursor:pointer}
+.blk.off{opacity:.14}
+.blk:hover,.blk:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.playhead{position:absolute;top:0;bottom:-1px;width:2px;background:var(--signal);transform:translateX(-50%);transition:left .1s linear;pointer-events:none}
+.break{position:absolute;bottom:-2px;font:500 13px/1 var(--mono);color:var(--faint);transform:translateX(-50%)}
+@media(max-width:560px){.blk{width:9px;height:13px}}
+.wave-years{position:relative;height:16px;font:400 11px/1 var(--mono);color:var(--faint);margin-top:6px}
+.wave-years span{position:absolute;transform:translateX(-50%)}
+.scrub{margin-top:16px}
+input[type=range]{width:100%;accent-color:var(--signal);height:2px;display:block}
+.scrub-read{font:500 12px/1 var(--mono);color:var(--ink);margin-top:8px}
+.scrub-read span{color:var(--muted)}
+.prog{display:flex;gap:3px;height:16px}
+.unit{flex:1;border:1px solid var(--line-strong);border-radius:2px;background:none}
+.unit.fill{background:var(--signal);border-color:var(--signal)}
+.traj-cap{font:400 11px/1.5 var(--mono);color:var(--muted);margin-top:8px}
+.traj-cap b{color:var(--signal);font-weight:500}
+
+/* clusters */
+.cluster{padding:34px 0 6px}
+.cluster-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;border-left:3px solid var(--chue,var(--line-strong));padding-left:12px}
+.cluster-no{font:500 11px/1 var(--mono);color:var(--faint);letter-spacing:.1em}
+.cluster-name{font:600 20px/1.2 var(--serif)}
+.cluster-link{font:400 12px/1 var(--mono);color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong);margin-left:auto}
+.cluster-link:hover,.cluster-link:focus-visible{color:var(--signal);border-color:var(--signal)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.tile{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--chue,var(--line-strong));border-radius:4px;padding:14px 14px 12px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,opacity .25s;display:flex;flex-direction:column;gap:7px;min-height:118px}
+.tile:hover,.tile:focus-visible{border-color:var(--line-strong);border-left-color:var(--chue)}
+.tile:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+.tile.pulse{border-color:var(--signal);border-left-color:var(--signal);background:var(--signal-soft)}
+.tile.dim{opacity:.22}
+.tile-name{font-weight:600;font-size:15px;line-height:1.3}
+.tile-type{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.tile-meta{font:400 11.5px/1.5 var(--mono);color:var(--faint);margin-top:auto}
+.tile-tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tag{font:500 10.5px/1 var(--mono);padding:4px 7px;border-radius:3px}
+.tag.assessed{background:var(--signal-soft);color:var(--signal)}
+.tag.not{color:var(--faint);border:1px solid var(--line);background:none}
+.tag.species{border:1px solid var(--line-strong);color:var(--muted);background:none}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font:400 10.5px/1 var(--mono);color:var(--faint);border:1px dashed var(--line-strong);border-radius:3px;padding:3px 6px}
+
+/* next assessments */
+.next{padding-top:36px;padding-bottom:36px}
+.next ul{list-style:none;display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.next li{font:500 13px/1 var(--mono);border:1px solid var(--line-strong);border-radius:3px;padding:8px 12px;color:var(--muted)}
+.next .register{font:400 11.5px/1.6 var(--mono);color:var(--faint);margin-top:12px}
+
+/* footer */
+footer{border-top:1px solid var(--line-strong);padding:26px 0 48px;margin-top:8px}
+.foot-links{display:flex;gap:22px;font:400 12px/1 var(--mono)}
+.foot-links a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--line-strong)}
+.foot-links a:hover,.foot-links a:focus-visible{color:var(--signal);border-color:var(--signal)}
+.stamp{font:400 11px/1.7 var(--mono);color:var(--faint);margin-top:16px}
+
+/* panel */
+.panel{position:fixed;top:0;right:0;height:100vh;width:min(420px,92vw);background:var(--card);border-left:1px solid var(--line-strong);box-shadow:-18px 0 40px rgba(26,29,33,.08);padding:26px 26px 40px;overflow-y:auto;transform:translateX(102%);transition:transform .22s ease;z-index:20}
+.panel.open{transform:none}
+.panel-close{position:absolute;top:16px;right:16px;border:1px solid var(--line);background:none;border-radius:3px;font:500 12px/1 var(--mono);padding:7px 9px;cursor:pointer;color:var(--muted)}
+.panel-close:hover,.panel-close:focus-visible{color:var(--signal);border-color:var(--signal)}
+.panel-cluster{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--pchue,var(--muted));margin-bottom:8px}
+.panel h2{font:700 24px/1.2 var(--serif);margin-bottom:18px;padding-right:44px}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:118px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.row dt{font:500 10.5px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.row dd{color:var(--ink)}
+.row dd.mono{font:400 12.5px/1.6 var(--mono)}
+.panel-links{margin-top:20px}
+.panel-links .inst-label{margin-bottom:10px}
+.plink{display:block;font:400 13px/1.5 var(--mono);color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:3px;padding:9px 11px;margin-bottom:8px}
+.plink:hover,.plink:focus-visible{border-color:var(--signal);color:var(--signal)}
+.plink small{display:block;color:var(--faint);font-size:10.5px;margin-top:2px}
+.pnote{display:block;font:400 13px/1.5 var(--mono);color:var(--faint);border:1px dashed var(--line);border-radius:3px;padding:9px 11px;margin-bottom:8px}
+.pnote small{display:block;font-size:10.5px;margin-top:2px}
+.scrim{position:fixed;inset:0;background:rgba(26,29,33,.14);opacity:0;pointer-events:none;transition:opacity .22s;z-index:10}
+.scrim.on{opacity:1;pointer-events:auto}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1 id="title"></h1>
+    <p class="standfirst">The current standing of the corpus: what each framework is, who issued it, what binds, and which have been assessed. Click any tile for its detail and sources.</p>
+    <div class="statusline" id="statusline"></div>
+  </div>
+</header>
+
+<section class="instruments">
+  <div class="wrap inst-grid">
+    <div>
+      <div class="inst-label">The governance wave - first arrivals</div>
+      <div class="wave" id="wave"></div>
+      <div class="wave-years" id="waveYears"></div>
+      <div class="scrub">
+        <input type="range" id="scrub" aria-label="Scrub the governance wave by month">
+      </div>
+      <div class="scrub-read"><span>as at</span> <b id="scrubRead"></b></div>
+    </div>
+    <div class="traj">
+      <div class="inst-label">Assessment progress</div>
+      <div id="traj"></div>
+      <div class="traj-cap" id="trajCap"></div>
+    </div>
+  </div>
+</section>
+
+<main id="clusters" class="wrap"></main>
+
+<section class="next wrap">
+  <div class="inst-label">Next assessments</div>
+  <ul id="nextQueue"></ul>
+  <div class="register" id="nextRegister"></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/METHOD.md">Method</a>
+      <a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/SOURCES.md">Sources</a>
+      <a href="https://github.com/ABradley79/ai-governance-analysis">Repository</a>
+    </div>
+    <div class="stamp" id="stamp"></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle" hidden>
+  <button class="panel-close" id="panelClose" aria-label="Close panel">ESC / CLOSE</button>
+  <div class="panel-cluster" id="panelCluster"></div>
+  <h2 id="panelTitle"></h2>
+  <dl class="rows" id="panelRows"></dl>
+  <div class="panel-links" id="panelLinks"></div>
+</aside>
+
+<script>
+(function(){
+"use strict";
+var DOC = "https://github.com/ABradley79/ai-governance-analysis/blob/main/";
+var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function mIdx(s){ if(!s) return null; var p=s.split("-"); return (+p[0])*12 + (+p[1]) - 1; }
+function mFmt(i){ return MONTHS[i%12] + " " + Math.floor(i/12); }
+function dFmt(s){ if(!s) return null; var p=s.split("-");
+  if(p.length===3) return (+p[2]) + " " + MONTHS[+p[1]-1] + " " + p[0];
+  return MONTHS[+p[1]-1] + " " + p[0]; }
+function el(tag,cls,txt){ var e=document.createElement(tag); if(cls)e.className=cls; if(txt!=null)e.textContent=txt; return e; }
+
+function render(D){
+var clusterById = {}; D.clusters.forEach(function(c,i){ c.no=i+1; c.hue="var(--c"+(i+1)+")"; clusterById[c.id]=c; });
+var fwById = {}; D.frameworks.forEach(function(f){ fwById[f.id]=f; });
+
+/* artefact link resolution */
+var linksByFw = {}, linksByCluster = {};
+function pushLink(map,key,link){ (map[key]=map[key]||[]).push(link); }
+D.artefacts.forEach(function(a){
+  if(a.covers) a.covers.forEach(function(id){
+    pushLink(linksByFw,id,{kind:"analysis",label:a.title,url:DOC+a.url,sub:"Published analysis, "+dFmt(a.date)});
+  });
+  if(a.touchpoint_coverage) a.touchpoint_coverage.forEach(function(id){
+    pushLink(linksByFw,id,{kind:"touchpoint",label:"Treated within the NIST AI RMF assessment",url:DOC+a.url,sub:"Touchpoint coverage; this framework remains not assessed"});
+  });
+  if(a.covers_cluster){
+    pushLink(linksByCluster,a.covers_cluster,{kind:"exhibit",label:a.title,url:a.url_interactive,sub:"Cluster exhibit, interactive"});
+    D.frameworks.forEach(function(f){ if(f.cluster===a.covers_cluster)
+      pushLink(linksByFw,f.id,{kind:"exhibit",label:a.title,url:a.url_interactive,sub:"Cluster exhibit, "+dFmt(a.date)}); });
+  }
+});
+
+/* masthead */
+document.getElementById("eyebrow").textContent = D.meta.umbrella;
+document.getElementById("title").textContent = D.meta.title;
+document.title = D.meta.title + " - " + D.meta.umbrella;
+var t = D.meta.corpus_totals;
+var sl = document.getElementById("statusline");
+[["frameworks",t.frameworks],["clusters",t.clusters]].forEach(function(p){
+  var s=el("span"); s.innerHTML="<b>"+p[1]+"</b> "+p[0]; sl.appendChild(s);
+});
+var sA=el("span"); sA.innerHTML="<b class='assessed-n'>"+t.assessed+"</b> assessed"; sl.appendChild(sA);
+var sD=el("span"); sD.innerHTML="as at <b>"+dFmt(D.meta.generated)+"</b>"; sl.appendChild(sD);
+document.getElementById("stamp").textContent = "Generated "+dFmt(D.meta.generated)+". "+D.meta.regeneration_rule;
+
+/* wave + scrub */
+var arrivals = D.frameworks.filter(function(f){return f.first_arrival;});
+var WAVE0 = mIdx("2023-01");
+var maxM = mIdx(D.meta.generated);
+var preMs = arrivals.map(function(f){return mIdx(f.first_arrival);}).filter(function(m){return m < WAVE0;});
+var PRE_W = preMs.length ? 7 : 0, GAP = preMs.length ? 2.5 : 0, LIN0 = PRE_W + GAP;
+var preMin = preMs.length ? Math.min.apply(null, preMs) : WAVE0;
+function pct(m){
+  if(m < WAVE0){
+    var span = (WAVE0 - 1) - preMin;
+    return span <= 0 ? PRE_W/2 : ((m - preMin)/span)*(PRE_W - 2) + 1;
+  }
+  return LIN0 + ((m - WAVE0)/(maxM - WAVE0))*(100 - LIN0);
+}
+var wave = document.getElementById("wave");
+var wy = document.getElementById("waveYears");
+if(preMs.length){
+  var bk = el("div","break","//"); bk.style.left = (PRE_W + GAP/2)+"%"; wave.appendChild(bk);
+  var preYears = {}; preMs.forEach(function(m){ preYears[Math.floor(m/12)] = m; });
+  Object.keys(preYears).forEach(function(y){
+    var plb = el("span",null,String(y)); plb.style.left = pct(preYears[y])+"%"; wy.appendChild(plb);
+  });
+}
+for(var y=Math.ceil(WAVE0/12); y<=Math.floor(maxM/12); y++){
+  var jan = y*12;
+  if(jan < WAVE0 || jan > maxM) continue;
+  var gl = el("div","gridline"); gl.style.left = pct(jan)+"%"; wave.appendChild(gl);
+  var lb = el("span",null,String(y)); lb.style.left = pct(jan)+"%";
+  wy.appendChild(lb);
+}
+var byMonth = {};
+arrivals.forEach(function(f){ var i=mIdx(f.first_arrival); (byMonth[i]=byMonth[i]||[]).push(f); });
+Object.keys(byMonth).forEach(function(i){
+  var st = el("div","mstack"); st.style.left = pct(+i)+"%";
+  byMonth[i].forEach(function(f){
+    var b = el("button","blk"); b.type="button";
+    b.style.background = clusterById[f.cluster].hue;
+    b.title = f.name+" - "+dFmt(f.first_arrival);
+    b.setAttribute("aria-label","Go to "+f.name);
+    b.dataset.m = i;
+    b.addEventListener("click",function(){ jumpTo(f.id); });
+    st.appendChild(b);
+  });
+  wave.appendChild(st);
+});
+var playhead = el("div","playhead"); wave.appendChild(playhead);
+function jumpTo(id){
+  var tl = document.getElementById("tile-"+id); if(!tl) return;
+  var motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  tl.scrollIntoView({behavior: motionOK?"smooth":"auto", block:"center"});
+  tl.classList.add("pulse");
+  setTimeout(function(){ tl.classList.remove("pulse"); }, 1400);
+  tl.focus({preventScroll:true});
+}
+var scrub = document.getElementById("scrub");
+scrub.min = WAVE0; scrub.max = maxM; scrub.value = maxM;
+document.querySelector(".scrub").style.paddingLeft = LIN0 + "%";
+function applyScrub(){
+  var v = +scrub.value;
+  document.getElementById("scrubRead").textContent = mFmt(v);
+  playhead.style.left = pct(v)+"%";
+  wave.querySelectorAll(".blk").forEach(function(b){ b.classList.toggle("off", +b.dataset.m > v); });
+  document.querySelectorAll(".tile").forEach(function(tl){
+    var a = tl.dataset.arrival;
+    tl.classList.toggle("dim", a!=="" && +a > v);
+  });
+}
+scrub.addEventListener("input", applyScrub);
+
+/* assessment progress */
+(function(){
+  var tr = D.meta.trajectory, total = tr.corpus_total;
+  var last = tr.points[tr.points.length-1];
+  var order = D.artefacts.filter(function(a){return a.kind==="one_pager";})
+    .sort(function(a,b){return a.date<b.date?-1:1;})
+    .map(function(a){return {name: fwById[a.covers[0]].name, date: dFmt(a.date)};});
+  var bar = el("div","prog");
+  for(var i=0;i<total;i++){
+    var u = el("div","unit"+(i<last.assessed?" fill":""));
+    u.title = i<order.length ? "Assessed: "+order[i].name+", "+order[i].date : "Not yet assessed";
+    bar.appendChild(u);
+  }
+  var mount = document.getElementById("traj"); mount.innerHTML=""; mount.appendChild(bar);
+  document.getElementById("trajCap").innerHTML = "<b>"+last.assessed+" of "+total+"</b> frameworks assessed / latest "+mFmt(mIdx(last.month));
+})();
+
+/* clusters + tiles */
+var main = document.getElementById("clusters");
+D.clusters.forEach(function(c){
+  var sec = el("section","cluster");
+  var head = el("div","cluster-head"); head.style.setProperty("--chue",c.hue);
+  head.appendChild(el("span","cluster-no","C"+c.no));
+  head.appendChild(el("span","cluster-name",c.name));
+  (linksByCluster[c.id]||[]).forEach(function(l){
+    var a=el("a","cluster-link","Exhibit: "+l.label); a.href=l.url; head.appendChild(a);
+  });
+  sec.appendChild(head);
+  var grid = el("div","tiles");
+  D.frameworks.filter(function(f){return f.cluster===c.id;}).forEach(function(f){
+    var tl = el("button","tile"); tl.id = "tile-"+f.id; tl.style.setProperty("--chue",c.hue);
+    tl.dataset.arrival = f.first_arrival ? mIdx(f.first_arrival) : "";
+    tl.setAttribute("aria-haspopup","dialog");
+    tl.appendChild(el("div","tile-type",f.type));
+    tl.appendChild(el("div","tile-name",f.name));
+    var tags = el("div","tile-tags");
+    tags.appendChild(el("span","tag "+(f.assessed?"assessed":"not"), f.assessed?"Assessed":"Not assessed"));
+    if(f.species) tags.appendChild(el("span","tag species",f.species));
+    tl.appendChild(tags);
+    if(f.companions){
+      var ch=el("div","chips");
+      f.companions.forEach(function(n){ ch.appendChild(el("span","chip",n)); });
+      tl.appendChild(ch);
+    }
+    var meta=[]; if(f.version) meta.push(f.version);
+    if(f.version_date) meta.push(dFmt(f.version_date));
+    if(f.status) meta.push(f.status);
+    tl.appendChild(el("div","tile-meta",meta.join(" / ")));
+    tl.addEventListener("click",function(){openPanel(f);});
+    grid.appendChild(tl);
+  });
+  sec.appendChild(grid);
+  main.appendChild(sec);
+});
+
+/* next assessments */
+var nq=document.getElementById("nextQueue");
+D.meta.next_assessments.queue.forEach(function(n){ nq.appendChild(el("li",null,n)); });
+document.getElementById("nextRegister").textContent = D.meta.next_assessments.register;
+
+/* panel */
+var panel=document.getElementById("panel"), scrim=document.getElementById("scrim"), lastFocus=null;
+function row(dl,label,value,mono){
+  if(value==null||value==="") return;
+  var d=el("div","row"); d.appendChild(el("dt",null,label));
+  d.appendChild(el("dd",mono?"mono":null,value)); dl.appendChild(d);
+}
+function openPanel(f){
+  lastFocus=document.activeElement;
+  var c=clusterById[f.cluster];
+  var pc=document.getElementById("panelCluster");
+  pc.textContent="C"+c.no+" / "+c.name; pc.style.setProperty("--pchue",c.hue);
+  document.getElementById("panelTitle").textContent=f.name;
+  var dl=document.getElementById("panelRows"); dl.innerHTML="";
+  row(dl,"Type",f.type);
+  if(f.species) row(dl,"Species",f.species);
+  row(dl,"Issuer",f.issuer);
+  row(dl,"Binding force",f.binding_force);
+  row(dl,"Status",f.status);
+  row(dl,"Version",[f.version,dFmt(f.version_date)].filter(Boolean).join(", "),true);
+  row(dl,"First arrival",dFmt(f.first_arrival),true);
+  row(dl,"Assessment",f.assessed?"Assessed":"Not assessed");
+  if(f.companions) row(dl,"Companions",f.companions.join(", "),true);
+  var pl=document.getElementById("panelLinks"); pl.innerHTML="";
+  pl.appendChild(el("div","inst-label","Links"));
+  function plink(label,url,sub){
+    var a=el("a","plink"); a.href=url; a.appendChild(el("span",null,label));
+    if(sub) a.appendChild(el("small",null,sub)); pl.appendChild(a);
+  }
+  function pnote(main,sub){
+    var n=el("div","pnote"); n.appendChild(el("span",null,main));
+    if(sub) n.appendChild(el("small",null,sub)); pl.appendChild(n);
+  }
+  var links=(linksByFw[f.id]||[]).slice();
+  var hasAnalysis = links.some(function(l){ return l.kind==="analysis"||l.kind==="touchpoint"; });
+  if(!hasAnalysis) pnote("No published analysis yet");
+  links.forEach(function(l){ plink(l.label,l.url,l.sub); });
+  if(f.source_link && f.source_link.verified){
+    plink("Official source",f.source_link.url,"Verified "+dFmt(f.source_link.verified_date));
+  } else {
+    pnote("Official source held until verified","This page links only destinations checked live.");
+  }
+  panel.hidden=false; requestAnimationFrame(function(){panel.classList.add("open");scrim.classList.add("on");});
+  document.getElementById("panelClose").focus();
+}
+function closePanel(){
+  panel.classList.remove("open"); scrim.classList.remove("on");
+  setTimeout(function(){panel.hidden=true;},220);
+  if(lastFocus) lastFocus.focus();
+}
+document.getElementById("panelClose").addEventListener("click",closePanel);
+scrim.addEventListener("click",closePanel);
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!panel.hidden) closePanel(); });
+
+applyScrub();
+}
+fetch("corpus_data.json")
+  .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(render)
+  .catch(function(err){ document.getElementById("eyebrow").textContent = "corpus_data.json failed to load"; console.error(err); });
+})();
+</script>
+</body>
+</html>

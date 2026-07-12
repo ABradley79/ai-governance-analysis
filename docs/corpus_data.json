@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "title": "State of Play",
+    "umbrella": "AI Governance Frameworks Under Pressure",
+    "generated": "2026-07-12",
+    "corpus_totals": {
+      "frameworks": 18,
+      "clusters": 8,
+      "assessed": 5
+    },
+    "regeneration_rule": "This dataset is re-derived whenever a master index change touches an included field. Every regeneration gets a changelog line and a fresh generated date. Derivation specification: the ruled field table, corpus map thread, 12 July 2026.",
+    "next_assessments": {
+      "register": "Provisional, direction of travel only, no dates.",
+      "queue": [
+        "EU AI Act",
+        "UK approach",
+        "Council of Europe CETS 225",
+        "UAE / regional cluster"
+      ]
+    },
+    "trajectory": {
+      "corpus_total": 18,
+      "points": [
+        {
+          "month": "2026-05",
+          "assessed": 1
+        },
+        {
+          "month": "2026-07",
+          "assessed": 5
+        }
+      ]
+    },
+    "render_rules": [
+      "The page composes no corpus content. Every rendered corpus string is a value in this file; interface chrome is the only free text.",
+      "source_link renders only where verified is true; candidate links never render.",
+      "The species row renders only where the species key exists; type never substitutes for species.",
+      "Null or absent values render as absence, never as placeholders or invented text.",
+      "touchpoint_coverage renders as a 'treated within' link on the covered tile and never alters its assessed value.",
+      "Companion chips render as names only, carrying no fields of their own."
+    ],
+    "pending_at_build": [
+      "SOURCES.md extension: compose entries for all eighteen tiles from this dataset's links. Six pins to close at the write: UK pro-innovation gov.uk page live-check; CoE exact landing path; UAE AI Charter exact URL and official-document date confirm; OpenAI Preparedness first-arrival announcement pin (December 2023, corroborated indirectly 12 July 2026); DIFC Reg 10 A&C Framework date from the lodged PDF; DDA whitepaper document link and lodged-PDF internal date (index's 'v1.0, August 2025' flagged for correction at close, ruled R2 12 July 2026).",
+      "NIST one-pager fifth class 3 placement into one-pagers/ rides the build session (ruled 12 July 2026)."
+    ]
+  },
+  "clusters": [
+    {
+      "id": "c1",
+      "name": "EU Regulatory"
+    },
+    {
+      "id": "c2",
+      "name": "ISO/IEC AI Standards Family"
+    },
+    {
+      "id": "c3",
+      "name": "NIST (US Voluntary)"
+    },
+    {
+      "id": "c4",
+      "name": "UK Approach"
+    },
+    {
+      "id": "c5",
+      "name": "Council of Europe (International Treaty)"
+    },
+    {
+      "id": "c6",
+      "name": "Multilateral Declarations"
+    },
+    {
+      "id": "c7",
+      "name": "Frontier Lab Safety Frameworks"
+    },
+    {
+      "id": "c8",
+      "name": "UAE / Regional"
+    }
+  ],
+  "frameworks": [
+    {
+      "id": "eu_ai_act",
+      "name": "EU AI Act",
+      "cluster": "c1",
+      "type": "Binding regulation",
+      "issuer": "European Parliament and Council",
+      "binding_force": "Binding EU regulation, extraterritorial",
+      "status": "In force (phased)",
+      "version": "Regulation (EU) 2024/1689",
+      "version_date": "2024-06-13",
+      "first_arrival": "2024-06",
+      "assessed": false,
+      "source_link": {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "gpai_cop",
+      "name": "GPAI Code of Practice",
+      "cluster": "c1",
+      "type": "Voluntary code",
+      "issuer": "European Commission / GPAI working groups",
+      "binding_force": "Voluntary",
+      "status": "Current",
+      "version": "Final",
+      "version_date": "2025-07-10",
+      "first_arrival": "2025-07",
+      "assessed": false,
+      "source_link": {
+        "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "iso42001",
+      "name": "ISO/IEC 42001",
+      "cluster": "c2",
+      "type": "Voluntary standard",
+      "issuer": "ISO/IEC",
+      "binding_force": "Voluntary international standard, certifiable",
+      "status": "Current",
+      "version": "42001:2023",
+      "version_date": "2023-12",
+      "first_arrival": "2023-12",
+      "assessed": true,
+      "species": "Management-system standard",
+      "companions": [
+        "ISO/IEC 22989",
+        "ISO/IEC 23053",
+        "ISO/IEC 23894",
+        "ISO/IEC 38507",
+        "ISO/IEC 42005",
+        "ISO/IEC 42006"
+      ],
+      "source_link": {
+        "url": "https://www.iso.org/standard/42001",
+        "verified": true,
+        "verified_date": "2026-07-10"
+      }
+    },
+    {
+      "id": "nist_ai_rmf",
+      "name": "NIST AI RMF 1.0",
+      "cluster": "c3",
+      "type": "Voluntary framework",
+      "issuer": "NIST",
+      "binding_force": "Voluntary, non-certifiable",
+      "status": "Current; revision in progress",
+      "version": "AI 100-1",
+      "version_date": "2023-01",
+      "first_arrival": "2023-01",
+      "assessed": true,
+      "species": "Method framework",
+      "source_link": {
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "nist_600_1",
+      "name": "NIST AI 600-1",
+      "cluster": "c3",
+      "type": "Companion profile",
+      "issuer": "NIST",
+      "binding_force": "Voluntary",
+      "status": "Current",
+      "version": "AI 600-1",
+      "version_date": "2024-07-26",
+      "first_arrival": "2024-07",
+      "assessed": false,
+      "source_link": {
+        "url": "https://doi.org/10.6028/NIST.AI.600-1",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "uk_approach",
+      "name": "UK pro-innovation approach",
+      "cluster": "c4",
+      "type": "Policy framework",
+      "issuer": "UK Government",
+      "binding_force": "Non-statutory, principles-based",
+      "status": "Current, refined Feb 2024",
+      "version": "White Paper",
+      "version_date": "2023-03",
+      "first_arrival": "2023-03",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "coe_cets225",
+      "name": "CoE CETS 225",
+      "cluster": "c5",
+      "type": "International treaty",
+      "issuer": "Council of Europe",
+      "binding_force": "Binding treaty for signatories",
+      "status": "Open for signature, not yet in force",
+      "version": "CETS 225",
+      "version_date": "2024-09-05",
+      "first_arrival": "2024-09",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.coe.int/en/web/artificial-intelligence/the-framework-convention-on-artificial-intelligence",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "bletchley",
+      "name": "Bletchley Declaration",
+      "cluster": "c6",
+      "type": "Non-binding declaration",
+      "issuer": "AI Safety Summit 2023 signatories",
+      "binding_force": "Non-binding",
+      "status": "Current",
+      "version": "Declaration",
+      "version_date": "2023-11",
+      "first_arrival": "2023-11",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "seoul",
+      "name": "Seoul Declaration",
+      "cluster": "c6",
+      "type": "Non-binding declaration",
+      "issuer": "AI Seoul Summit signatories",
+      "binding_force": "Non-binding",
+      "status": "Current",
+      "version": "Declaration",
+      "version_date": "2024-05-21",
+      "first_arrival": "2024-05",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.gov.uk/government/publications/seoul-declaration-for-safe-innovative-and-inclusive-ai-ai-seoul-summit-2024",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "safety_commitments",
+      "name": "Frontier AI Safety Commitments",
+      "cluster": "c6",
+      "type": "Voluntary commitments",
+      "issuer": "16 frontier developers, Seoul 2024",
+      "binding_force": "Voluntary commitments",
+      "status": "Current",
+      "version": "Commitments",
+      "version_date": "2024-05-21",
+      "first_arrival": "2024-05",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.gov.uk/government/publications/frontier-ai-safety-commitments-ai-seoul-summit-2024",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "anthropic_rsp",
+      "name": "Anthropic RSP",
+      "cluster": "c7",
+      "type": "Lab safety policy",
+      "issuer": "Anthropic",
+      "binding_force": "Voluntary internal policy",
+      "status": "Current",
+      "version": "v3.3",
+      "version_date": "2026-05-26",
+      "first_arrival": "2023-09",
+      "assessed": true,
+      "species": "Frontier safety framework",
+      "source_link": {
+        "url": "https://www.anthropic.com/responsible-scaling-policy",
+        "verified": true,
+        "verified_date": "2026-07-05"
+      }
+    },
+    {
+      "id": "openai_pf",
+      "name": "OpenAI Preparedness Framework",
+      "cluster": "c7",
+      "type": "Lab safety policy",
+      "issuer": "OpenAI",
+      "binding_force": "Voluntary internal policy",
+      "status": "Current",
+      "version": "v2",
+      "version_date": "2025-04-15",
+      "first_arrival": "2023-12",
+      "assessed": true,
+      "species": "Frontier safety framework",
+      "source_link": {
+        "url": "https://openai.com/index/updating-our-preparedness-framework/",
+        "verified": true,
+        "verified_date": "2026-07-07"
+      }
+    },
+    {
+      "id": "deepmind_fsf",
+      "name": "DeepMind FSF",
+      "cluster": "c7",
+      "type": "Lab safety policy",
+      "issuer": "Google DeepMind",
+      "binding_force": "Voluntary internal policy",
+      "status": "Current",
+      "version": "v3.1",
+      "version_date": "2026-04-17",
+      "first_arrival": "2024-05",
+      "assessed": true,
+      "species": "Frontier safety framework",
+      "source_link": {
+        "url": "https://deepmind.google/blog/strengthening-our-frontier-safety-framework/",
+        "verified": true,
+        "verified_date": "2026-07-08"
+      }
+    },
+    {
+      "id": "uae_strategy_2031",
+      "name": "UAE Strategy 2031",
+      "cluster": "c8",
+      "type": "National strategy",
+      "issuer": "UAE Government",
+      "binding_force": "Non-binding strategy",
+      "status": "Current",
+      "version": null,
+      "version_date": "2017-10",
+      "first_arrival": "2017-10",
+      "assessed": false,
+      "source_link": {
+        "url": "https://ai.gov.ae/strategy/",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "uae_ai_charter",
+      "name": "UAE AI Charter",
+      "cluster": "c8",
+      "type": "National charter",
+      "issuer": "UAE Government",
+      "binding_force": "Non-binding principles",
+      "status": "Current",
+      "version": null,
+      "version_date": "2024-06-10",
+      "first_arrival": "2024-06",
+      "assessed": false,
+      "source_link": {
+        "url": "https://uaelegislation.gov.ae/en/policy/details/the-uae-charter-for-the-development-and-use-of-artificial-intelligence",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "difc_dpr",
+      "name": "DIFC Data Protection Regulations",
+      "cluster": "c8",
+      "type": "Regulatory framework",
+      "issuer": "DIFC",
+      "binding_force": "Binding within DIFC",
+      "status": "Current",
+      "version": "Regulation 10 amendment",
+      "version_date": "2023-09-01",
+      "first_arrival": "2023-09",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.difc.com/business/registrars-and-commissioners/commissioner-of-data-protection/regulation-10",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "difc_reg10",
+      "name": "DIFC Reg 10 Accreditation and Certification Framework",
+      "cluster": "c8",
+      "type": "Certification framework",
+      "issuer": "DIFC Commissioner of Data Protection",
+      "binding_force": "Binding within DIFC",
+      "status": "Current",
+      "version": null,
+      "version_date": "2024-08",
+      "first_arrival": null,
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.difc.com/business/registrars-and-commissioners/commissioner-of-data-protection/regulation-10",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    },
+    {
+      "id": "dda_matrix",
+      "name": "DDA AI Integration Matrix",
+      "cluster": "c8",
+      "type": "Strategic whitepaper",
+      "issuer": "Dubai Digital Authority",
+      "binding_force": "Non-binding whitepaper",
+      "status": "Current",
+      "version": "v1.0",
+      "version_date": "2025-08",
+      "first_arrival": "2026-04",
+      "assessed": false,
+      "source_link": {
+        "url": "https://www.digitaldubai.ae/newsroom/news/digital-dubai-launches-ai-integration-matrix-framework-to-accelerate-ai-adoption-across-government",
+        "verified": true,
+        "verified_date": "2026-07-12"
+      }
+    }
+  ],
+  "artefacts": [
+    {
+      "id": "op_iso42001",
+      "kind": "one_pager",
+      "title": "ISO/IEC 42001 one-pager",
+      "url": "one-pagers/ISO-42001_one-pager.md",
+      "date": "2026-05-24",
+      "covers": [
+        "iso42001"
+      ]
+    },
+    {
+      "id": "op_rsp",
+      "kind": "one_pager",
+      "title": "Anthropic RSP one-pager",
+      "url": "one-pagers/Anthropic_RSP_one-pager.md",
+      "date": "2026-07-05",
+      "covers": [
+        "anthropic_rsp"
+      ]
+    },
+    {
+      "id": "op_openai",
+      "kind": "one_pager",
+      "title": "OpenAI Preparedness Framework one-pager",
+      "url": "one-pagers/OpenAI_Preparedness_one-pager.md",
+      "date": "2026-07-07",
+      "covers": [
+        "openai_pf"
+      ]
+    },
+    {
+      "id": "op_fsf",
+      "kind": "one_pager",
+      "title": "DeepMind FSF one-pager",
+      "url": "one-pagers/DeepMind_FSF_one-pager.md",
+      "date": "2026-07-09",
+      "covers": [
+        "deepmind_fsf"
+      ]
+    },
+    {
+      "id": "op_nist",
+      "kind": "one_pager",
+      "title": "NIST AI RMF one-pager",
+      "url": "one-pagers/NIST_AI_RMF_one-pager.md",
+      "date": "2026-07-11",
+      "covers": [
+        "nist_ai_rmf"
+      ],
+      "touchpoint_coverage": [
+        "nist_600_1"
+      ]
+    },
+    {
+      "id": "cmp_frontier",
+      "kind": "comparative",
+      "title": "Delay, Halt, Nothing: The Frontier-Lab Safety Frameworks Under Pressure",
+      "url_document": "comparative-artefacts/Comparative_Frontier_Labs_10July2026.md",
+      "url_interactive": "comparative/",
+      "date": "2026-07-10",
+      "covers_cluster": "c7"
+    }
+  ]
+}
