@@ -106,6 +106,7 @@ button.b-c:hover{background:#f6f6f3}
 button.b-c.fsf-col:hover{background:#f7e4de}
 .b-c.selected{box-shadow:inset 0 0 0 2px var(--ink)}
 .p-gloss{font:400 13.5px/1.6 var(--sans);color:var(--muted);max-width:70ch;margin-bottom:10px}
+.p-absent{font:400 12px/1.6 var(--mono);color:var(--faint);max-width:72ch}
 .cite a{color:var(--muted)}
 .b-scroll{overflow-x:auto}
 .finding{font:400 15px/1.65 var(--serif);max-width:66ch;margin:18px 0 8px}
@@ -290,7 +291,7 @@ document.querySelectorAll(".b-c[data-bin]").forEach(cell=>cell.addEventListener(
   bpanel.innerHTML = `<div class="p-head"><span class="p-where">${esc(FW[cell.dataset.fw].lab)} · ${esc(row.bin)}</span></div>
     <div class="p-gloss">${esc(row.gloss_plain)}</div>
     <div class="p-verdict">${esc(c.verdict)}</div>
-    ${c.detail?`<div class="p-detail">${esc(c.detail)}</div>`:""}${cite(c.citation,cell.dataset.fw)}`;
+    ${c.detail?`<div class="p-detail">${esc(c.detail)}</div>`:`<div class="p-absent">The frozen artefact's Section 3 carries no cell-specific prose beyond this verdict.</div>`}${cite(c.citation,cell.dataset.fw)}`;
   bpanel.scrollIntoView({block:"nearest",behavior:"smooth"});
 }));
 document.getElementById("b-finding").textContent = ob.finding;
