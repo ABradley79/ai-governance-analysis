@@ -16,7 +16,7 @@ The comparative runs all three frameworks down the same four-stage pipeline (def
 
 ## The one-pagers
 
-Each deep-dive closes with a one-page analysis: scope, thresholds and triggers, obligations tested for failability, enforcement model, and intersections with crisis and resilience practice. Headline verdicts, in the artefacts' own words:
+Each deep-dive closes with a one-pager, a name that describes the discipline rather than the length: scope, thresholds and triggers, obligations tested for failability, enforcement model, and intersections with crisis and resilience practice. Headline verdicts, in the artefacts' own words:
 
 | Framework | Closed | Headline verdict |
 |---|---|---|
