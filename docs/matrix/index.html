@@ -27,6 +27,7 @@ tr.gnd button.cell,tr.gnd td.dim{color:var(--muted)}tr.gnd{background:var(--pape
 #panel .reg{font:400 11.5px/1.5 var(--mono);color:var(--signal);margin:0 0 10px}
 #panel .verdict{font:500 14px/1.6 var(--sans);margin:0 0 12px;padding:10px 12px;background:var(--paper);border:1px solid var(--line);border-radius:3px}
 #panel .sect{font:400 13.5px/1.7 var(--sans);white-space:pre-wrap;margin:0 0 12px}
+#panel details{margin:0 0 12px}#panel summary{font:500 11.5px/1 var(--mono);color:var(--muted);cursor:pointer}#panel details .sect{margin:10px 0 0}
 #panel .links{font:400 12px/1.6 var(--mono);border-top:1px solid var(--line);padding-top:10px}
 #panel .links a{color:var(--ink);border-bottom:1px dotted var(--line-strong);text-decoration:none;margin-right:16px}
 #panel .close{float:right;font:500 11px/1 var(--mono);background:none;border:1px solid var(--line-strong);border-radius:3px;padding:5px 8px;cursor:pointer;color:var(--muted)}
@@ -75,7 +76,7 @@ function openPanel(did,fid){
  else if(c.marks.some(m=>m.type==='species_null'))reg='<p class="reg">clause-level species null / '+esc(C.registers.species_null)+'</p>';
  P.innerHTML='<button class="close" onclick="this.parentNode.style.display=\'none\'">close / esc</button>'
  +'<p class="eyebrow">'+esc(d.label)+' / '+esc(f.name)+' / '+esc(sp)+'</p><h2>'+esc(s.title)+'</h2>'+reg
- +'<div class="verdict">'+cellHtml(c)+'</div><div class="sect">'+esc(s.text)+'</div>'
+ +'<div class="verdict">'+cellHtml(c)+'</div><details><summary>full section</summary><div class="sect">'+esc(s.text)+'</div></details>'
  +'<div class="links"><a href="https://github.com/ABradley79/ai-governance-analysis/blob/main/'+C.source_artefact+'" target="_blank" rel="noopener">frozen artefact (live at commit one)</a>'
  +(f.official_link?'<a href="'+esc(f.official_link)+'" target="_blank" rel="noopener">official source</a>':'<span>official source: see SOURCES.md</span>')+'</div>';
  P.style.display='block';P.scrollIntoView({behavior:'smooth',block:'nearest'});}
