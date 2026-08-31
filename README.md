@@ -25,6 +25,7 @@ Each deep-dive closes with a one-pager, a name that describes the discipline rat
 | [OpenAI Preparedness v2](one-pagers/OpenAI_Preparedness_one-pager.md) | 7 July 2026 | Sharper at the line, softer at the consequence. Precise thresholds wired to an illustrative response, with every lever inside the building. |
 | [DeepMind FSF v3.1](one-pagers/DeepMind_FSF_one-pager.md) | 9 July 2026 | The sharpest front end in the cluster, wired to a decide stage that certifies itself. Every substantive road in the document ends at "we assess". |
 | [NIST AI RMF 1.0](one-pagers/NIST_AI_RMF_one-pager.md) | 11 July 2026 | A method framework, not a management system: governs nothing and equips governing. The failable instrument is rare. The unfailable one is everywhere. |
+| [NIST AI 600-1, Generative AI Profile](one-pagers/NIST_AI_600-1_one-pager.md) | 25 August 2026 | Equips a decision-maker it never obligates, names, or waits for. |
 
 ## Method
 
@@ -46,7 +47,7 @@ The framework texts themselves are not hosted in this repository. Redistribution
 
 ## What comes next
 
-Five frameworks are assessed, across three species: a management-system standard (ISO/IEC 42001), three frontier safety frameworks (the Anthropic RSP, the OpenAI Preparedness Framework, the DeepMind FSF), and a method framework (the NIST AI RMF). The next assessments, held in the dataset's provisional register (direction of travel only, no dates): the EU AI Act, the UK approach, the Council of Europe CETS 225, and the UAE / regional cluster. Behind those sit the cross-framework comparison matrix and the governance landscape map built on the gaps between frameworks rather than their contents.
+Six frameworks are assessed, across three species: a management-system standard (ISO/IEC 42001), three frontier safety frameworks (the Anthropic RSP, the OpenAI Preparedness Framework, the DeepMind FSF), a method framework (the NIST AI RMF), and that framework's Generative AI Profile (NIST AI 600-1), a profile instance of the same species. The next assessments, held in the dataset's provisional register (direction of travel only, no dates): the EU AI Act, the UK approach, the Council of Europe CETS 225, and the UAE / regional cluster. Behind those sit the cross-framework comparison matrix and the governance landscape map built on the gaps between frameworks rather than their contents.
 
 ## Licence and conventions
 

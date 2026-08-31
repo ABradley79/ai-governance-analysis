@@ -27,9 +27,13 @@ A purchased standard; no copy is hosted or linked beyond the catalogue page. Ana
 Landing page: https://www.nist.gov/itl/ai-risk-management-framework
 Link checked live 12 July 2026. Current, with a revision in progress at NIST; the artefact analyses 1.0.
 
+**NIST AI 600-1** -- Generative AI Profile (26 July 2024)
+Document: https://doi.org/10.6028/NIST.AI.600-1
+Link checked live 31 August 2026. Current at the July 2024 text, no revision issued; analysed as the Generative AI Profile of AI RMF 1.0.
+
 ## Frameworks tracked
 
-The corpus tracks eighteen frameworks across eight clusters. The thirteen below are not yet analysed; entries follow the corpus cluster order.
+The corpus tracks eighteen frameworks across eight clusters. The twelve below are not yet analysed; entries follow the corpus cluster order.
 
 **EU AI Act** -- Regulation (EU) 2024/1689 (13 June 2024)
 Source of record: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
@@ -38,10 +42,6 @@ Link checked live 12 July 2026. In force, phased application.
 **GPAI Code of Practice** (final, 10 July 2025)
 Landing page: https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai
 Link checked live 12 July 2026.
-
-**NIST AI 600-1** -- Generative AI Profile (26 July 2024)
-Document: https://doi.org/10.6028/NIST.AI.600-1
-Link checked live 12 July 2026. Treated within the NIST AI RMF assessment as touchpoint coverage; not separately assessed.
 
 **UK pro-innovation approach** -- White Paper (March 2023; refined February 2024)
 Source of record: https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach
