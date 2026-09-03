@@ -3,7 +3,7 @@
 **Framework:** ISO/IEC 42001:2023, Information technology -- Artificial intelligence -- Management system (AIMS)
 **Type:** Certifiable management-system standard, Annex SL structure
 **Issuing body:** ISO/IEC JTC 1 / SC 42
-**Status:** Current, first edition (Dec 2023). No amendments. Companion standards developing around it: ISO/IEC 42005 (impact assessment), ISO/IEC 42006 (certification-body requirements, draft).
+**Status:** Current, first edition (Dec 2023). No amendments. Companion standards developing around it: ISO/IEC 42005 (impact assessment), ISO/IEC 42006 (certification-body requirements; published as ISO/IEC 42006:2025, July 2025).
 **Deep-dive completed:** 24 May 2026 | **Analyst:** Andrew Bradley
 
 ---
