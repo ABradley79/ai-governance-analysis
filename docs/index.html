@@ -378,7 +378,12 @@ function openPanel(f){
   row(dl,"Status",f.status);
   row(dl,"Version",[f.version,dFmt(f.version_date)].filter(Boolean).join(", "),true);
   row(dl,"First arrival",dFmt(f.first_arrival),true);
-  row(dl,"Assessment",f.assessed?"Assessed":"Not assessed");
+  var assessTxt=f.assessed?"Assessed":"Not assessed";
+  if(f.assessed===true&&f.assessed_on&&typeof f.assessed_on==="object"&&typeof f.assessed_on.version==="string"&&f.assessed_on.version){
+    assessTxt="Assessed on "+f.assessed_on.version+(f.assessed_on.date?" ("+dFmt(f.assessed_on.date)+")":"");
+    if(f.version&&f.version!==f.assessed_on.version) assessTxt+="; current "+f.version+(f.version_date?" ("+dFmt(f.version_date)+")":"");
+  }
+  row(dl,"Assessment",assessTxt);
   if(f.companions) row(dl,"Companions",f.companions.join(", "),true);
   var pl=document.getElementById("panelLinks"); pl.innerHTML="";
   pl.appendChild(el("div","inst-label","Links"));

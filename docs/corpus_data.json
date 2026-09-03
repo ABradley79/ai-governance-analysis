@@ -2,7 +2,7 @@
   "meta": {
     "title": "State of Play",
     "umbrella": "AI Governance Frameworks Under Pressure",
-    "generated": "2026-08-31",
+    "generated": "2026-09-03",
     "corpus_totals": {
       "frameworks": 18,
       "clusters": 8,
@@ -41,7 +41,8 @@
       "The species row renders only where the species key exists; type never substitutes for species.",
       "Null or absent values render as absence, never as placeholders or invented text.",
       "touchpoint_coverage renders as a 'treated within' link on the covered tile and never alters its assessed value.",
-      "Companion chips render as names only, carrying no fields of their own."
+      "Companion chips render as names only, carrying no fields of their own.",
+      "assessed_on renders in the detail panel's Assessment row only, beside the current version; the tile face never carries it."
     ],
     "pending_at_build": []
   },
@@ -88,8 +89,8 @@
       "issuer": "European Parliament and Council",
       "binding_force": "Binding EU regulation, extraterritorial",
       "status": "In force (phased)",
-      "version": "Regulation (EU) 2024/1689",
-      "version_date": "2024-06-13",
+      "version": "Regulation (EU) 2024/1689, as amended by Regulation (EU) 2026/1744",
+      "version_date": "2026-07-27",
       "first_arrival": "2024-06",
       "assessed": false,
       "source_link": {
@@ -279,10 +280,14 @@
       "issuer": "Anthropic",
       "binding_force": "Voluntary internal policy",
       "status": "Current",
-      "version": "v3.3",
-      "version_date": "2026-05-26",
+      "version": "v3.4",
+      "version_date": "2026-07-08",
       "first_arrival": "2023-09",
       "assessed": true,
+      "assessed_on": {
+        "version": "v3.3",
+        "date": "2026-07-05"
+      },
       "species": "Frontier safety framework",
       "source_link": {
         "url": "https://www.anthropic.com/responsible-scaling-policy",

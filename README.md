@@ -21,7 +21,7 @@ Each deep-dive closes with a one-pager, a name that describes the discipline rat
 | Framework | Closed | Headline verdict |
 |---|---|---|
 | [ISO/IEC 42001:2023](one-pagers/ISO-42001_one-pager.md) | 24 May 2026 | Accountability scaffolding and an audit trail, not AI risk management in the substantive sense. A static-system management standard applied to a non-static, non-bounded problem. |
-| [Anthropic RSP v3.3](one-pagers/Anthropic_RSP_one-pager.md) | 5 July 2026 | Real substance, self-held enforcement. A framework that constrains itself from inside the thing it is constraining. |
+| [Anthropic RSP](one-pagers/Anthropic_RSP_one-pager.md) (assessed on v3.3; v3.4 current since 8 July 2026) | 5 July 2026 | Real substance, self-held enforcement. A framework that constrains itself from inside the thing it is constraining. |
 | [OpenAI Preparedness v2](one-pagers/OpenAI_Preparedness_one-pager.md) | 7 July 2026 | Sharper at the line, softer at the consequence. Precise thresholds wired to an illustrative response, with every lever inside the building. |
 | [DeepMind FSF v3.1](one-pagers/DeepMind_FSF_one-pager.md) | 9 July 2026 | The sharpest front end in the cluster, wired to a decide stage that certifies itself. Every substantive road in the document ends at "we assess". |
 | [NIST AI RMF 1.0](one-pagers/NIST_AI_RMF_one-pager.md) | 11 July 2026 | A method framework, not a management system: governs nothing and equips governing. The failable instrument is rare. The unfailable one is everywhere. |

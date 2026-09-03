@@ -4,9 +4,9 @@ The framework texts analysed in this repository are not hosted here: redistribut
 
 ## Frameworks analysed
 
-**Anthropic Responsible Scaling Policy, v3.3** (effective 26 May 2026)
+**Anthropic Responsible Scaling Policy, v3.4** (effective 8 July 2026)
 Source of record: https://www.anthropic.com/responsible-scaling-policy
-Version verified current 5 July 2026. Note: the published v3.3 PDF has a pagination defect; the artefacts cite it by section, never by page.
+Version verified current 3 September 2026. Analysed at v3.3 (effective 26 May 2026); the deep-dive closed 5 July 2026 and the artefact is frozen at that version. Note: the published v3.3 PDF has a pagination defect; the artefacts cite it by section, never by page.
 
 **OpenAI Preparedness Framework, Version 2** (15 April 2025)
 Announcement and landing page: https://openai.com/index/updating-our-preparedness-framework/
@@ -35,9 +35,10 @@ Link checked live 31 August 2026. Current at the July 2024 text, no revision iss
 
 The corpus tracks eighteen frameworks across eight clusters. The twelve below are not yet analysed; entries follow the corpus cluster order.
 
-**EU AI Act** -- Regulation (EU) 2024/1689 (13 June 2024)
+**EU AI Act** -- Regulation (EU) 2024/1689 (13 June 2024), as amended by Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI; OJ 24 July 2026, in force 27 July 2026)
 Source of record: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
-Link checked live 12 July 2026. In force, phased application.
+Amending regulation: https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng
+Links checked live 3 September 2026. In force, phased application, as amended.
 
 **GPAI Code of Practice** (final, 10 July 2025)
 Landing page: https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai
