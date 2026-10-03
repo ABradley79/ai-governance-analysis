@@ -283,12 +283,20 @@ function jumpTo(id){
   tl.focus({preventScroll:true});
 }
 var scrub = document.getElementById("scrub");
-scrub.min = WAVE0; scrub.max = maxM; scrub.value = maxM;
-document.querySelector(".scrub").style.paddingLeft = LIN0 + "%";
+/* the bar runs the full width of the wave: K steps cross the compressed pre-2023 zone, then one step per month */
+var NLIN = maxM - WAVE0;
+var K = preMs.length ? Math.max(1, Math.floor(LIN0*NLIN/(100 - LIN0))) : 0;
+scrub.min = WAVE0 - K; scrub.max = maxM; scrub.value = maxM;
+document.querySelector(".scrub").style.paddingLeft = (K ? 0 : LIN0) + "%";
 function applyScrub(){
-  var v = +scrub.value;
+  var v = +scrub.value, left;
+  if(v < WAVE0){
+    var j = v - (WAVE0 - K);
+    v = preMin + Math.round(j*(WAVE0 - preMin)/K);
+    left = pct(preMin) + (j/K)*(LIN0 - pct(preMin));
+  } else left = pct(v);
   document.getElementById("scrubRead").textContent = mFmt(v);
-  playhead.style.left = pct(v)+"%";
+  playhead.style.left = left+"%";
   wave.querySelectorAll(".blk").forEach(function(b){ b.classList.toggle("off", +b.dataset.m > v); });
   document.querySelectorAll(".tile").forEach(function(tl){
     var a = tl.dataset.arrival;
