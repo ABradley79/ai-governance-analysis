@@ -31,18 +31,18 @@ Link checked live 12 July 2026. Current, with a revision in progress at NIST; th
 Document: https://doi.org/10.6028/NIST.AI.600-1
 Link checked live 31 August 2026. Current at the July 2024 text, no revision issued; analysed as the Generative AI Profile of AI RMF 1.0.
 
-## Frameworks tracked
-
-The corpus tracks eighteen frameworks across eight clusters. The twelve below are not yet analysed; entries follow the corpus cluster order.
-
 **EU AI Act** -- Regulation (EU) 2024/1689 (13 June 2024), as amended by Regulation (EU) 2026/1744 of 8 July 2026 (Digital Omnibus on AI; OJ 24 July 2026, in force 27 July 2026)
 Source of record: https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng
 Amending regulation: https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng
-Links checked live 3 September 2026. In force, phased application, as amended.
+Links checked live 3 October 2026. In force, phased application, as amended. Analysed on the consolidated text as at 27 July 2026; the deep-dive closed 13 September 2026.
 
 **GPAI Code of Practice** (final, 10 July 2025)
 Landing page: https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai
-Link checked live 12 July 2026.
+Link checked live 3 October 2026. The instrument is the three chapter documents the European Commission publishes on that page: Transparency (Commission newsroom document 118120), Copyright (118115), and Safety and Security (118119). Current and unrevised; analysed on those three documents; the deep-dive closed 2 October 2026.
+
+## Frameworks tracked
+
+The corpus tracks eighteen frameworks across eight clusters. The ten below are not yet analysed; entries follow the corpus cluster order.
 
 **UK pro-innovation approach** -- White Paper (March 2023; refined February 2024)
 Source of record: https://www.gov.uk/government/publications/ai-regulation-a-pro-innovation-approach
@@ -100,3 +100,15 @@ A separate DeepMind source, deliberately never merged into FSF claims; cited by 
 https://www.legislation.gov.uk/uksi/2015/398/contents
 With HSE guidance L154: https://www.hse.gov.uk/pubns/books/l154.htm
 The citable counter-model for author-accepted safety cases, used in the flagship comparative.
+
+**NIS2 Directive** -- Directive (EU) 2022/2555 (14 December 2022)
+https://eur-lex.europa.eu/eli/dir/2022/2555/oj/eng
+The Union's cybersecurity directive; cited in the EU AI Act one-pager for its incident-reporting clocks, read beside the Act's own.
+
+**CER Directive** -- Directive (EU) 2022/2557 (14 December 2022)
+https://eur-lex.europa.eu/eli/dir/2022/2557/oj/eng
+The Union's critical-entities resilience directive; cited in the EU AI Act one-pager for its incident-notification clock and its Annex, and as the source of the Act's definition of critical infrastructure (Article 3(62)).
+
+**Market Surveillance Regulation** -- Regulation (EU) 2019/1020 (20 June 2019)
+https://eur-lex.europa.eu/eli/reg/2019/1020/oj/eng
+The market-surveillance regulation behind the Act's enforcement of AI systems; cited in the EU AI Act one-pager for the authority's seven-day clock (Article 19).

@@ -2,20 +2,19 @@
   "meta": {
     "title": "State of Play",
     "umbrella": "AI Governance Frameworks Under Pressure",
-    "generated": "2026-09-03",
+    "generated": "2026-10-03",
     "corpus_totals": {
       "frameworks": 18,
       "clusters": 8,
-      "assessed": 6
+      "assessed": 8
     },
     "regeneration_rule": "This dataset is re-derived whenever a master index change touches an included field. Every regeneration gets a changelog line and a fresh generated date. Derivation specification: the ruled field table, corpus map thread, 12 July 2026.",
     "next_assessments": {
       "register": "Provisional, direction of travel only, no dates.",
       "queue": [
-        "EU AI Act",
+        "UAE / regional cluster",
         "UK approach",
-        "Council of Europe CETS 225",
-        "UAE / regional cluster"
+        "Council of Europe CETS 225"
       ]
     },
     "trajectory": {
@@ -32,6 +31,14 @@
         {
           "month": "2026-08",
           "assessed": 6
+        },
+        {
+          "month": "2026-09",
+          "assessed": 7
+        },
+        {
+          "month": "2026-10",
+          "assessed": 8
         }
       ]
     },
@@ -92,11 +99,12 @@
       "version": "Regulation (EU) 2024/1689, as amended by Regulation (EU) 2026/1744",
       "version_date": "2026-07-27",
       "first_arrival": "2024-06",
-      "assessed": false,
+      "assessed": true,
+      "species": "Statutory conformity regime",
       "source_link": {
         "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
         "verified": true,
-        "verified_date": "2026-07-12"
+        "verified_date": "2026-10-03"
       }
     },
     {
@@ -104,17 +112,18 @@
       "name": "GPAI Code of Practice",
       "cluster": "c1",
       "type": "Voluntary code",
-      "issuer": "European Commission / GPAI working groups",
+      "issuer": "Independent chairs, in a process facilitated by the AI Office; published by the European Commission",
       "binding_force": "Voluntary",
       "status": "Current",
       "version": "Final",
       "version_date": "2025-07-10",
       "first_arrival": "2025-07",
-      "assessed": false,
+      "assessed": true,
+      "species": "Transmission instrument for the Act's model tier",
       "source_link": {
         "url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
         "verified": true,
-        "verified_date": "2026-07-12"
+        "verified_date": "2026-10-03"
       }
     },
     {
@@ -483,6 +492,26 @@
       "date": "2026-08-25",
       "covers": [
         "nist_600_1"
+      ]
+    },
+    {
+      "id": "op_eu_ai_act",
+      "kind": "one_pager",
+      "title": "EU AI Act one-pager",
+      "url": "one-pagers/EU_AI_Act_one-pager.md",
+      "date": "2026-09-13",
+      "covers": [
+        "eu_ai_act"
+      ]
+    },
+    {
+      "id": "op_gpai_cop",
+      "kind": "one_pager",
+      "title": "GPAI Code of Practice one-pager",
+      "url": "one-pagers/GPAI_Code_one-pager.md",
+      "date": "2026-10-02",
+      "covers": [
+        "gpai_cop"
       ]
     },
     {

@@ -12,7 +12,7 @@ A three-lens comparative of the Anthropic Responsible Scaling Policy (v3.3), the
 
 The comparative runs all three frameworks down the same four-stage pipeline (define the capability line, detect the crossing, decide the response, be made to act) and finds the three labs hollow at three different stages, so no two fail in the same place and an overlay of all three covers the whole pipeline with hollows. Four absences hold across the entire cluster: no external on-switch, no response clock on any model, no structurally different machinery for the hazards that corrupt the labs' own evidence base, and nothing anywhere that holds both outcome substance and enforcement machinery. The site root at [abradley79.github.io/ai-governance-analysis](https://abradley79.github.io/ai-governance-analysis/) carries State of Play, an interactive map of the whole corpus; an interactive rendering of the flagship comparative is live one click away at [abradley79.github.io/ai-governance-analysis/comparative/](https://abradley79.github.io/ai-governance-analysis/comparative/), and every verdict on it traces to the frozen artefact through its published data contract.
 
-**What Holds**, an interactive matrix reading the five assessed frameworks down eleven dimensions, is live at [abradley79.github.io/ai-governance-analysis/matrix/](https://abradley79.github.io/ai-governance-analysis/matrix/), and every verdict on it traces to the frozen artefact, [What Holds: Five Frameworks Under Pressure](What_Holds_Five_Frameworks_12July2026.md) (12 July 2026), through its published data contract.
+**What Holds**, an interactive matrix reading five of the assessed frameworks down eleven dimensions, is live at [abradley79.github.io/ai-governance-analysis/matrix/](https://abradley79.github.io/ai-governance-analysis/matrix/), and every verdict on it traces to the frozen artefact, [What Holds: Five Frameworks Under Pressure](What_Holds_Five_Frameworks_12July2026.md) (12 July 2026), through its published data contract.
 
 ## The one-pagers
 
@@ -20,12 +20,14 @@ Each deep-dive closes with a one-pager, a name that describes the discipline rat
 
 | Framework | Closed | Headline verdict |
 |---|---|---|
-| [ISO/IEC 42001:2023](one-pagers/ISO-42001_one-pager.md) | 24 May 2026 | Accountability scaffolding and an audit trail, not AI risk management in the substantive sense. A static-system management standard applied to a non-static, non-bounded problem. |
+| [ISO/IEC 42001:2023](one-pagers/ISO-42001_one-pager.md) | 24 May 2026 | Accountability scaffolding and an audit trail, not AI risk management in the substantive sense. Strong at governing the documentable, blind to the undocumentable. |
 | [Anthropic RSP](one-pagers/Anthropic_RSP_one-pager.md) (assessed on v3.3; v3.4 current since 8 July 2026) | 5 July 2026 | Real substance, self-held enforcement. A framework that constrains itself from inside the thing it is constraining. |
 | [OpenAI Preparedness v2](one-pagers/OpenAI_Preparedness_one-pager.md) | 7 July 2026 | Sharper at the line, softer at the consequence. Precise thresholds wired to an illustrative response, with every lever inside the building. |
 | [DeepMind FSF v3.1](one-pagers/DeepMind_FSF_one-pager.md) | 9 July 2026 | The sharpest front end in the cluster, wired to a decide stage that certifies itself. Every substantive road in the document ends at "we assess". |
 | [NIST AI RMF 1.0](one-pagers/NIST_AI_RMF_one-pager.md) | 11 July 2026 | A method framework, not a management system: governs nothing and equips governing. The failable instrument is rare. The unfailable one is everywhere. |
 | [NIST AI 600-1, Generative AI Profile](one-pagers/NIST_AI_600-1_one-pager.md) | 25 August 2026 | Equips a decision-maker it never obligates, names, or waits for. |
+| [EU AI Act](one-pagers/EU_AI_Act_one-pager.md) (as amended by Regulation (EU) 2026/1744) | 13 September 2026 | An on-switch outside the operator, wired to an acceptance still inside it. Binding in law, paperwork in crisis time. |
+| [GPAI Code of Practice](one-pagers/GPAI_Code_one-pager.md) (final, 10 July 2025) | 2 October 2026 | The Code adds external scrutiny, but the Signatory remains in control. It must show the regulator its evidence by launch day, but still sets its own pass mark, decides what risk to accept and makes the call on stopping. |
 
 ## Method
 
@@ -47,7 +49,7 @@ The framework texts themselves are not hosted in this repository. Redistribution
 
 ## What comes next
 
-Six frameworks are assessed, across three species: a management-system standard (ISO/IEC 42001), three frontier safety frameworks (the Anthropic RSP, the OpenAI Preparedness Framework, the DeepMind FSF), a method framework (the NIST AI RMF), and that framework's Generative AI Profile (NIST AI 600-1), a profile instance of the same species. The next assessments, held in the dataset's provisional register (direction of travel only, no dates): the EU AI Act, the UK approach, the Council of Europe CETS 225, and the UAE / regional cluster. Behind those sit the cross-framework comparison matrix and the governance landscape map built on the gaps between frameworks rather than their contents.
+Eight frameworks are assessed, across four species: a management-system standard (ISO/IEC 42001); three frontier safety frameworks (the Anthropic RSP, the OpenAI Preparedness Framework, the DeepMind FSF); a method framework (the NIST AI RMF) and its Generative AI Profile (NIST AI 600-1), a profile instance of the same species; and a statutory conformity regime (the EU AI Act) with its GPAI Code of Practice, a transmission instrument for the Act's model tier and not a fifth species. The next assessments, held in the dataset's provisional register (direction of travel only, no dates): the UAE / regional cluster, the UK approach, and the Council of Europe CETS 225. Behind those sit the cross-framework comparison matrix and the governance landscape map built on the gaps between frameworks rather than their contents.
 
 ## Licence and conventions
 

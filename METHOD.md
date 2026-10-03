@@ -6,6 +6,8 @@ The artefacts in this repository cite a working apparatus: numbered threads (T1 
 
 The corpus proceeds by sequential deep-dives, one framework at a time, each read through three lenses: governance (scope, binding force, enforcement), resilience (systemic risk, failure modes, recovery) and decision-making (choices under uncertainty). Each dive closes with a frozen, dated one-pager (published here) and a private reasoning note. Findings that cut across frameworks accumulate in the synthesis as numbered threads; repeatable tests distilled from those threads become instruments, applied to every framework that follows. Before any comparative product is built, a validation checkpoint gates it: the flagship comparative in this repository was drafted only after a full consistency pass across the corpus, in which every load-bearing claim was verified against its primary source and every contradiction between artefacts was found, adjudicated and resolved on the record.
 
+The EU cluster was one dive run as two working threads: Thread A assessed the EU AI Act (closed 13 September 2026) and Thread B the GPAI Code of Practice, read against the frozen Act artefacts (closed 2 October 2026). These are sessions of work, not the numbered synthesis threads below. A "pair" is a framework's one-pager with its private reasoning note; a "stop" is a point in a dive at which the analyst rules.
+
 ## The threads
 
 Each thread is a cross-framework question. The one-line entries below say what each thread asks; the analysis and its current state live in the private synthesis, and the published artefacts carry whatever conclusions have been verified.
