@@ -10,9 +10,11 @@
 
 ## Headline verdict
 
+**Accountability scaffolding and an audit trail, not AI risk management in the substantive sense. Strong at governing the documentable, blind to the undocumentable.**
+
 ISO/IEC 42001 is a static-system management standard applied to a non-static, non-bounded problem. It is correctly modest about what a management system can do, but that modesty is forced by the immaturity, pace, and expanding scope of the field, not chosen freely. It cannot be more than it is. The risk universe it tries to manage is not merely young; it is moving and growing faster than any assessment cycle can close around it. It sets itself on foundations -- definable purpose, enumerable risk, traceable supply chain -- that AI does not currently provide and may never provide cleanly. That is not a flaw in the standard; it is the standard honestly reaching the edge of what a management-system standard can be.
 
-Its real product is **accountability scaffolding and an audit trail**, not AI risk management in the substantive sense. This is both its strength and the source of its limits, seen from two angles: it is genuinely strong at governing the documentable (who owns the decision, what was assessed, what the trail says) and structurally blind to the undocumentable (a system that drifts after assessment, a user whose trust quietly migrates). The scaffold is sound; it is simply anchored to a baseline that reality drifts away from. The certificate attests to your AIMS and your tier-one relationships, not to the system you are actually embedded in. The load-bearing resilience work -- detecting drift, responding to emergent failure, reaching past your own boundary -- it acknowledges the requirement and abdicates the mechanism.
+Its real product is accountability scaffolding and an audit trail, not AI risk management in the substantive sense. This is both its strength and the source of its limits, seen from two angles: it is genuinely strong at governing the documentable (who owns the decision, what was assessed, what the trail says) and structurally blind to the undocumentable (a system that drifts after assessment, a user whose trust quietly migrates). The scaffold is sound; it is simply anchored to a baseline that reality drifts away from. The certificate attests to your AIMS and your tier-one relationships, not to the system you are actually embedded in. The load-bearing resilience work -- detecting drift, responding to emergent failure, reaching past your own boundary -- it acknowledges the requirement and abdicates the mechanism.
 
 ---
 
@@ -34,7 +36,7 @@ The certificate's reach stops at the organisational boundary and tier-one suppli
 
 ## Who it binds
 
-Only the certified organisation, voluntarily. Binds by market pressure -- procurement requirements, EU AI Act Article 17 QMS alignment, customer and regulator trust -- rather than by law. Annex A.10 attempts to extend obligations across the supply chain but cannot enforce beyond tier one.
+Only the certified organisation, voluntarily. Binds by market pressure -- procurement requirements, EU AI Act Article 17 QMS alignment (market pressure only: the harmonised standard for Article 17 is EN 18286:2026, not found cited in the Official Journal, and a 42001 certificate carries no presumption of conformity under the Act; verified 13 September 2026 at the EU AI Act dive, stop 5), customer and regulator trust -- rather than by law. Annex A.10 attempts to extend obligations across the supply chain but cannot enforce beyond tier one.
 
 ## Key obligations
 
